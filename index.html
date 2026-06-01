@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ujian Sumatif Akhir Semester Genap - PKN Kelas IV</title>
+  <title>Ujian Sumatif Akhir Semester Genap - SD IT Ainul Mardhiah</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts (Fredoka & Quicksand untuk nuansa ramah anak) -->
+  <!-- Google Fonts (Fredoka & Quicksand) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
-      /* Mencegah highlight biru saat elemen disentuh di HP */
       -webkit-tap-highlight-color: transparent;
     }
     h1, h2, h3, h4, .font-title {
@@ -24,49 +23,147 @@
 <body class="bg-gradient-to-br from-indigo-50 via-teal-50 to-emerald-50 min-h-screen text-slate-800 antialiased selection:bg-indigo-100">
 
   <div class="max-w-xl mx-auto px-3 py-4 sm:py-8">
-    <!-- HEADER UTAMA (Dibuat lebih ringkas di HP) -->
-    <header class="text-center mb-5 sm:mb-8">
+    <!-- HEADER UTAMA -->
+    <header class="text-center mb-5">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white shadow-sm border border-emerald-100 text-emerald-600 font-semibold text-xs mb-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
         SD IT AINUL MARDHIAH
       </div>
-      <h1 class="text-xl sm:text-3xl font-bold text-slate-800 tracking-tight leading-snug">SUMATIF AKHIR SEMESTER</h1>
-      <p class="text-xs sm:text-base text-slate-500 mt-0.5">PKN Kelas IV SD &bull; Semester Genap</p>
+      <h1 class="text-xl sm:text-2xl font-bold text-slate-800 tracking-tight leading-snug">SUMATIF AKHIR SEMESTER GENAP</h1>
+      <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Aplikasi Ujian Interaktif Buatan Ayah Azam &bull; Kelas IV (Empat)</p>
     </header>
 
     <!-- CONTAINER UTAMA -->
-    <main class="bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-slate-100 p-4 sm:p-8 transition-all duration-300">
+    <main class="bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-slate-100 p-4 sm:p-6 transition-all duration-300">
       
-      <!-- Halaman Selamat Datang / Mulai -->
-      <div id="start-screen" class="space-y-5 text-center py-4">
-        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto text-indigo-600 animate-bounce">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+      <!-- Halaman Menu Daftar Pelajaran -->
+      <div id="menu-screen" class="space-y-4">
+        <div class="text-center py-2">
+          <h2 class="text-lg sm:text-xl font-bold text-slate-800">Pilih Mata Pelajaran</h2>
+          <p class="text-xs text-slate-400 mt-1">Silakan pilih salah satu mata pelajaran di bawah ini untuk memulai ujian.</p>
+        </div>
+
+        <div id="subject-grid" class="grid grid-cols-2 gap-3">
+          <!-- Card Pelajaran PKN -->
+          <button onclick="selectSubject('pkn')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-rose-100 bg-rose-50/30 hover:bg-rose-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center text-rose-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">🇮🇩</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">PKN</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran IPAS -->
+          <button onclick="selectSubject('ipas')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-emerald-100 bg-emerald-50/30 hover:bg-emerald-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">🌱</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">IPAS</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran MATEMATIKA -->
+          <button onclick="selectSubject('mtk')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-blue-100 bg-blue-50/30 hover:bg-blue-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">📐</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">Matematika</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran SENI RUPA -->
+          <button onclick="selectSubject('seni')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-amber-100 bg-amber-50/30 hover:bg-amber-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">🎨</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">Seni Rupa</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran BAHASA INDONESIA -->
+          <button onclick="selectSubject('indo')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-cyan-100 bg-cyan-50/30 hover:bg-cyan-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center text-cyan-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">📚</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">B. Indonesia</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran BAHASA ARAB -->
+          <button onclick="selectSubject('arab')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-purple-100 bg-purple-50/30 hover:bg-purple-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">🕌</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">B. Arab</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran BAHASA INGGRIS -->
+          <button onclick="selectSubject('inggris')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-sky-100 bg-sky-50/30 hover:bg-sky-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center text-sky-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">🇬🇧</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">B. Inggris</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran PJOK -->
+          <button onclick="selectSubject('pjok')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-orange-100 bg-orange-50/30 hover:bg-orange-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">⚽</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">PJOK</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran BTQ -->
+          <button onclick="selectSubject('btq')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-teal-100 bg-teal-50/30 hover:bg-teal-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">📖</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">BTQ</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+
+          <!-- Card Pelajaran PAI -->
+          <button onclick="selectSubject('pai')" class="flex flex-col items-center justify-center p-4 rounded-xl border border-lime-100 bg-lime-50/30 hover:bg-lime-50 active:scale-95 transition-all text-center group">
+            <div class="w-10 h-10 bg-lime-100 rounded-full flex items-center justify-center text-lime-600 mb-2 group-hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">✨</span>
+            </div>
+            <span class="font-bold text-xs sm:text-sm text-slate-800">PAI</span>
+            <span class="text-[9px] text-slate-400 mt-0.5">10 Pertanyaan</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Halaman Selamat Datang Pelajaran Terpilih -->
+      <div id="start-screen" class="hidden space-y-5 text-center py-4">
+        <div id="subject-welcome-badge" class="w-16 h-16 sm:w-20 sm:h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto text-indigo-600 animate-bounce text-3xl">
+          📚
         </div>
         <div class="space-y-1">
-          <h2 class="text-xl sm:text-2xl font-bold text-indigo-950">Siap untuk Memulai?</h2>
-          <p class="text-xs sm:text-sm text-slate-400">Ujian Sumatif Mandiri Mata Pelajaran Pancasila & Kewarganegaraan</p>
+          <h2 id="welcome-subject-title" class="text-xl sm:text-2xl font-bold text-indigo-950">Mata Pelajaran</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Sumatif Akhir Semester Genap</p>
         </div>
         
         <div class="text-slate-600 space-y-2 bg-indigo-50/50 p-4 rounded-xl text-left text-xs sm:text-sm border border-indigo-100/45">
           <p class="font-bold text-indigo-900">Petunjuk Ujian:</p>
           <ul class="list-disc pl-5 space-y-1.5">
-            <li>Terdiri dari <strong class="text-indigo-900">25 soal pilihan ganda</strong>.</li>
-            <li>Sesuai dengan kisi-kisi Kurikulum Merdeka.</li>
+            <li>Terdiri dari <strong class="text-indigo-900">10 soal pilihan ganda</strong> terpilih.</li>
+            <li>Sesuai dengan indikator kisi-kisi resmi.</li>
             <li>Klik pilihan jawaban, lalu ketuk tombol <strong class="text-indigo-900">"Cek Jawaban"</strong>.</li>
-            <li>Jika salah, kunci jawaban dan penjelasan lengkap akan otomatis terbuka.</li>
+            <li>Nilai dan penjelasan akan langsung muncul pada setiap soal.</li>
           </ul>
         </div>
         
-        <button id="btn-start" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg active:scale-95 transition-all">
-          Mulai Ujian Sekarang
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </button>
+        <div class="flex flex-col gap-2">
+          <button id="btn-start" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg active:scale-95 transition-all">
+            Mulai Ujian Sekarang
+          </button>
+          <button onclick="backToMenu()" class="text-xs text-slate-400 hover:text-slate-600 underline">Kembali ke Menu Utama</button>
+        </div>
       </div>
 
       <!-- Halaman Pertanyaan / Kuis -->
@@ -74,8 +171,8 @@
         <!-- Progress Bar & Indikator Soal -->
         <div class="flex items-center justify-between border-b border-slate-100 pb-3">
           <div>
-            <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Kemajuan</span>
-            <h3 class="text-sm sm:text-base font-bold text-indigo-950">Soal <span id="current-question-num">1</span> dari <span id="total-questions-num">25</span></h3>
+            <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Mata Pelajaran: <span id="quiz-subject-label" class="text-indigo-600">PKN</span></span>
+            <h3 class="text-sm sm:text-base font-bold text-indigo-950">Soal <span id="current-question-num">1</span> dari <span id="total-questions-num">10</span></h3>
           </div>
           <div class="text-right">
             <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Nilai Sementara</span>
@@ -84,7 +181,7 @@
         </div>
         
         <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-          <div id="progress-bar" class="bg-gradient-to-r from-indigo-500 to-teal-500 h-full transition-all duration-300" style="width: 4%"></div>
+          <div id="progress-bar" class="bg-gradient-to-r from-indigo-500 to-teal-500 h-full transition-all duration-300" style="width: 10%"></div>
         </div>
 
         <!-- Teks Pertanyaan -->
@@ -93,9 +190,9 @@
           <p id="question-text" class="text-sm sm:text-base font-bold text-slate-800 leading-relaxed">Loading...</p>
         </div>
 
-        <!-- Pilihan Jawaban (Disesuaikan untuk sentuhan HP yang nyaman) -->
+        <!-- Pilihan Jawaban -->
         <div id="options-container" class="grid grid-cols-1 gap-2">
-          <!-- Tombol Pilihan Jawaban dinamis dari JS -->
+          <!-- Opsi Jawaban Dinamis -->
         </div>
 
         <!-- Tombol Aksi Kuis -->
@@ -116,34 +213,29 @@
           </div>
         </div>
 
-        <!-- Kotak Feedback Penjelasan / Hasil Cek (Scrollable di HP jika teks panjang) -->
+        <!-- Kotak Feedback Penjelasan / Hasil Cek -->
         <div id="feedback-box" class="hidden rounded-xl p-4 border transition-all duration-300">
           <div class="flex items-start gap-2.5">
-            <div id="feedback-icon" class="w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0 mt-0.5">
-              <!-- Icon Centang / Silang dinamis -->
-            </div>
+            <div id="feedback-icon" class="w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0 mt-0.5"></div>
             <div class="space-y-0.5">
               <h4 id="feedback-title" class="text-sm sm:text-base font-bold">Judul</h4>
               <p id="feedback-desc" class="text-xs sm:text-sm leading-relaxed text-slate-700">Penjelasan disini.</p>
             </div>
           </div>
         </div>
-
       </div>
 
       <!-- Halaman Hasil / Skor Akhir -->
       <div id="result-screen" class="hidden text-center space-y-5 py-4">
-        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto text-amber-500 shadow-inner">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4l-1 9H9l-1-9h4z" />
-          </svg>
+        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto text-amber-500 shadow-inner text-3xl">
+          🎉
         </div>
         <div class="space-y-1">
           <h2 class="text-xl sm:text-2xl font-bold text-slate-800">Evaluasi Hasil Belajar</h2>
-          <p class="text-xs sm:text-sm text-slate-400 px-4">Kamu telah menyelesaikan seluruh rangkaian ujian PKN Kelas IV.</p>
+          <p class="text-xs sm:text-sm text-slate-400 px-4">Kamu telah menyelesaikan ujian pelajaran <span id="result-subject-title" class="font-bold text-indigo-600">PKN</span>.</p>
         </div>
 
-        <!-- Papan Skor (Dibuat responsif & cantik di HP) -->
+        <!-- Papan Skor -->
         <div class="grid grid-cols-3 gap-2.5 max-w-sm mx-auto bg-slate-50 p-3 rounded-xl border border-slate-100">
           <div class="p-2 sm:p-3 bg-white rounded-lg shadow-sm">
             <span class="text-[9px] sm:text-xs text-slate-400 font-bold uppercase">Benar</span>
@@ -164,386 +256,906 @@
           Kategori Nilai
         </div>
 
-        <!-- Tombol Akhir (Dibuat vertikal penuh di HP agar jempol mudah menjangkau) -->
+        <!-- Tombol Akhir -->
         <div class="flex flex-col gap-2 max-w-sm mx-auto pt-3">
           <button id="btn-restart" class="w-full inline-flex items-center justify-center gap-1.5 bg-indigo-600 text-white font-bold text-sm px-5 py-3 rounded-xl shadow hover:bg-indigo-700 active:scale-95 transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 15H19" />
-            </svg>
-            Ulangi Ujian
+            Ulangi Ujian Ini
           </button>
           <button id="btn-review" class="w-full inline-flex items-center justify-center gap-1.5 bg-slate-100 text-slate-700 font-bold text-sm px-5 py-3 rounded-xl hover:bg-slate-200 active:scale-95 transition-all border border-slate-200">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
             Tinjau Pembahasan Soal
+          </button>
+          <button onclick="backToMenu()" class="w-full inline-flex items-center justify-center gap-1.5 bg-emerald-600 text-white font-bold text-sm px-5 py-3 rounded-xl hover:bg-emerald-700 active:scale-95 transition-all">
+            Pilih Pelajaran Lain
           </button>
         </div>
       </div>
 
-      <!-- Halaman Tinjau Pembahasan / Review (Sangat nyaman di-scroll di HP) -->
+      <!-- Halaman Tinjau Pembahasan / Review -->
       <div id="review-screen" class="hidden space-y-4">
         <div class="flex justify-between items-center border-b border-slate-100 pb-3">
           <h2 class="text-base sm:text-lg font-bold text-slate-800">Pembahasan Soal</h2>
           <button id="btn-back-to-result" class="text-xs font-bold text-indigo-600 hover:underline">Kembali</button>
         </div>
         <div id="review-list-container" class="space-y-4 max-h-[60vh] overflow-y-auto pr-1">
-          <!-- Daftar dinamis tinjauan soal -->
+          <!-- Daftar Pembahasan Dinamis -->
         </div>
       </div>
 
     </main>
     
-    <!-- FOOTER -->
-    <footer class="text-center mt-6 text-[10px] text-slate-400">
+    <!-- FOOTER (Dengan Kredit Desain Baru) -->
+    <footer class="text-center mt-6 text-[10px] text-slate-400 space-y-1">
+      <p class="font-semibold text-slate-500">Desain oleh Nasrul Elmi, M.Pd.</p>
       <p>&copy; 2026 SD IT Ainul Mardhiah. Dirancang untuk semua jenis ponsel.</p>
     </footer>
   </div>
 
   <script>
-    // DATA PERTANYAAN SESUAI KISI-KISI
-    const questions = [
-      // --- MATERI 1: Keberagaman Sosial, Gotong Royong, Persatuan dan Kesatuan ---
-      {
-        id: 1,
-        category: "Keberagaman Sosial",
-        question: "Di kelas IVB SD IT Ainul Mardhiah terdapat siswa dari berbagai macam suku bangsa, seperti suku Aceh, Gayo, Minang, dan Jawa. Sikap terbaik yang harus ditunjukkan oleh semua siswa dalam keberagaman sosial ini adalah...",
-        options: [
-          "Hanya mau berteman dengan teman yang berasal dari suku yang sama.",
-          "Saling menghargai, menghormati, dan berteman dengan siapa saja tanpa membedakan suku.",
-          "Meminta teman yang berbeda suku untuk mengubah adat istiadatnya.",
-          "Membatasi pergaulan agar tidak terjadi kesalahpahaman budaya."
-        ],
-        correctIndex: 1,
-        explanation: "Saling menghargai dan berteman tanpa membeda-bedakan suku (toleransi) adalah kunci terwujudnya keharmonisan di tengah keberagaman sosial masyarakat Indonesia."
+    // DATA PERTANYAAN MULTI-PELAJARAN (10 Soal per Pelajaran Berdasarkan Kisi-Kisi yang Diunggah)
+    const allSubjectsData = {
+      pkn: {
+        title: "Pancasila & Kewarganegaraan",
+        icon: "🇮🇩",
+        questions: [
+          {
+            category: "Keberagaman Sosial",
+            question: "Di kelas IVB SD IT Ainul Mardhiah terdapat siswa dari berbagai macam suku bangsa, seperti suku Aceh, Gayo, Minang, dan Jawa. Sikap terbaik dalam keberagaman sosial ini adalah...",
+            options: [
+              "Hanya mau berteman dengan teman yang berasal dari suku yang sama.",
+              "Saling menghargai, menghormati, dan berteman dengan siapa saja.",
+              "Meminta teman yang berbeda suku untuk mengubah adat istiadatnya.",
+              "Membatasi pergaulan agar tidak terjadi kesalahpahaman budaya."
+            ],
+            correctIndex: 1,
+            explanation: "Saling menghargai dan berteman tanpa membeda-bedakan suku (toleransi) adalah kunci terwujudnya keharmonisan di tengah keberagaman sosial masyarakat Indonesia."
+          },
+          {
+            category: "Gotong Royong",
+            question: "Kerja bakti membersihkan lingkungan sekolah secara sukarela demi kepentingan bersama merupakan wujud nyata dari pengamalan nilai...",
+            options: ["Individualisme", "Gotong royong", "Kemandirian", "Persaingan sehat"],
+            correctIndex: 1,
+            explanation: "Gotong royong didefinisikan sebagai kegiatan bekerja bersama-sama secara sukarela untuk kepentingan bersama agar pekerjaan terasa lebih ringan."
+          },
+          {
+            category: "Persatuan & Kesatuan",
+            question: "Manakah di bawah ini yang merupakan contoh tindakan yang mencerminkan sikap persatuan dan kesatuan di lingkungan sekolah?",
+            options: [
+              "Bekerja sama dalam mengerjakan ujian tertulis di kelas.",
+              "Membantu teman satu geng saja saat mereka mengalami kesulitan.",
+              "Melaksanakan piket kelas bersama-sama sesuai dengan jadwal.",
+              "Mengutamakan kepentingan pribadi di atas piket bersama."
+            ],
+            correctIndex: 2,
+            explanation: "Piket kelas bersama-sama secara adil dan kompak menunjukkan rasa persatuan dan kesatuan di sekolah demi terciptanya kebersihan ruang belajar."
+          },
+          {
+            category: "Gotong Royong",
+            question: "Secara bahasa, kata gotong royong memiliki arti yang sangat mendalam. Arti dari istilah 'gotong' adalah...",
+            options: ["Bekerja bersama-sama", "Memikul atau mengangkat secara bersama", "Kewajiban sosial masyarakat", "Saling membantu keuangan"],
+            correctIndex: 1,
+            explanation: "Istilah 'gotong' memiliki arti memikul atau mengangkat beban, sedangkan 'royong' berarti bersama-sama."
+          },
+          {
+            category: "Nilai Pancasila",
+            question: "Menghormati teman yang sedang menjalankan ibadah puasa dan tidak makan dengan sengaja di depannya merupakan bentuk pengamalan sila Pancasila ke-1 yang berlambang...",
+            options: ["Bintang emas", "Rantai emas", "Pohon beringin", "Kepala banteng"],
+            correctIndex: 0,
+            explanation: "Saling menghormati antarumat beragama adalah bentuk pengamalan Sila ke-1 (Ketuhanan Yang Maha Esa) yang berlambangkan Bintang Emas."
+          },
+          {
+            category: "Nilai Pancasila",
+            question: "Saat pembagian tugas kelompok di kelas, terjadi perbedaan pendapat antara Andi dan Budi. Mereka kemudian berdiskusi mencapai mufakat. Kegiatan ini sesuai sila ke...",
+            options: ["Sila ke-2", "Sila ke-3", "Sila ke-4", "Sila ke-5"],
+            correctIndex: 2,
+            explanation: "Sila ke-4 mengamanatkan pentingnya musyawarah untuk mufakat dalam menyelesaikan masalah bersama tanpa memaksakan kehendak."
+          },
+          {
+            category: "Nilai Kepahlawanan",
+            question: "Sikap teladan pahlawan yang mengutamakan kepentingan bangsa di atas kepentingan pribadi disebut...",
+            options: ["Egois", "Rela berkorban (Patriotisme)", "Sombong", "Individualis"],
+            correctIndex: 1,
+            explanation: "Rela berkorban demi nusa dan bangsa (Patriotisme) merupakan nilai keteladanan luhur para pahlawan pejuang kemerdekaan."
+          },
+          {
+            category: "Perumusan Pancasila",
+            question: "Hari Lahir Pancasila diperingati secara nasional oleh seluruh rakyat Indonesia pada tanggal...",
+            options: ["1 Juni", "17 Agustus", "1 Oktober", "20 Mei"],
+            correctIndex: 0,
+            explanation: "Hari Lahir Pancasila diperingati setiap tanggal 1 Juni, merujuk pada momen pidato Ir. Soekarno dalam sidang BPUPKI tanggal 1 Juni 1945."
+          },
+          {
+            category: "BPUPKI",
+            question: "BPUPKI dibentuk pada tanggal 1 Maret 1945. Tokoh nasional terhormat yang ditunjuk dan dipercaya menjabat sebagai ketua BPUPKI adalah...",
+            options: ["Ir. Soekarno", "Drs. Mohammad Hatta", "Dr. K.R.T. Radjiman Wedyodiningrat", "Mr. Muhammad Yamin"],
+            correctIndex: 2,
+            explanation: "Ketua BPUPKI adalah Dr. K.R.T. Radjiman Wedyodiningrat, didampingi dua wakil ketua yaitu Ichibangase Yosio (Jepang) dan R.P. Soeroso."
+          },
+          {
+            category: "Perumusan Pancasila",
+            question: "Tiga tokoh utama yang mengusulkan konsep dasar negara Indonesia dalam sidang pertama BPUPKI adalah...",
+            options: [
+              "Ir. Soekarno, Moh. Hatta, Ki Hajar Dewantara",
+              "Mr. Muhammad Yamin, Dr. Soepomo, Ir. Soekarno",
+              "KH. Wahid Hasyim, Dr. Radjiman, Ahmad Soebardjo",
+              "Drs. Mohammad Hatta, Ki Bagus Hadikusumo, Sutan Syahrir"
+            ],
+            correctIndex: 1,
+            explanation: "Tiga tokoh perumus dasar negara dalam sidang BPUPKI adalah Mr. Muhammad Yamin (29 Mei), Dr. Soepomo (31 Mei), dan Ir. Soekarno (1 Juni)."
+          }
+        ]
       },
-      {
-        id: 2,
-        category: "Gotong Royong",
-        question: "Kerja bakti membersihkan lingkungan sekolah secara sukarela demi kepentingan bersama merupakan wujud nyata dari pengamalan nilai...",
-        options: [
-          "Individualisme",
-          "Gotong royong",
-          "Kemandirian",
-          "Persaingan sehat"
-        ],
-        correctIndex: 1,
-        explanation: "Gotong royong didefinisikan sebagai kegiatan bekerja bersama-sama secara sukarela untuk kepentingan bersama agar pekerjaan terasa lebih ringan dan cepat selesai."
+      ipas: {
+        title: "Ilmu Pengetahuan Alam & Sosial",
+        icon: "🌱",
+        questions: [
+          {
+            category: "Sumber Daya Alam",
+            question: "Manakah di bawah ini kelompok sumber daya alam yang dapat diperbarui dengan cepat?",
+            options: ["Minyak bumi, batubara, gas alam", "Hewan, tumbuhan, air", "Emas, perak, tembaga", "Aspal, besi, belerang"],
+            correctIndex: 1,
+            explanation: "Hewan, tumbuhan, and air adalah contoh sumber daya alam hayati/fisik yang memiliki kemampuan pemulihan cepat (dapat diperbarui)."
+          },
+          {
+            category: "Kenampakan Alam",
+            question: "Kenampakan alam wilayah perairan buatan yang sangat luas dan berfungsi sebagai PLTA serta irigasi sawah adalah...",
+            options: ["Sungai", "Danau", "Laut", "Waduk atau Bendungan"],
+            correctIndex: 3,
+            explanation: "Waduk adalah bendungan/danau buatan manusia yang dimanfaatkan untuk irigasi, PLTA, dan penanggulangan banjir."
+          },
+          {
+            category: "Kerja Sama",
+            question: "Sikap positif dan bertanggung jawab untuk menjaga kebersihan dan ketertiban di lingkungan rumah adalah...",
+            options: [
+              "Menunggu disuruh orang tua baru mau menyapu kamar.",
+              "Merapikan tempat tidur sendiri setelah bangun tidur tanpa disuruh.",
+              "Membuang sampah di kolong tempat tidur.",
+              "Membiarkan halaman kotor karena ada asisten rumah tangga."
+            ],
+            correctIndex: 1,
+            explanation: "Merapikan tempat tidur secara mandiri merupakan salah satu bentuk tanggung jawab siswa dalam menjaga kerapian rumah."
+          },
+          {
+            category: "SDA Hayati",
+            question: "Sumber daya alam hayati adalah sumber daya alam yang berasal dari...",
+            options: ["Benda mati di dalam bumi", "Makhluk hidup (hewan dan tumbuhan)", "Proses tambang dan mineral", "Kekuatan angin dan sinar matahari"],
+            correctIndex: 1,
+            explanation: "Kata 'hayati' merujuk pada makhluk hidup, yaitu hewan dan tumbuhan."
+          },
+          {
+            category: "Interaksi Sosial",
+            question: "Manusia tidak bisa hidup sendiri dan selalu memerlukan bantuan orang lain untuk memenuhi kebutuhan hidupnya. Hal ini membuktikan bahwa manusia adalah...",
+            options: ["Makhluk individu", "Makhluk sosial", "Makhluk mandiri", "Makhluk egois"],
+            correctIndex: 1,
+            explanation: "Manusia disebut makhluk sosial karena selalu berinteraksi dan bergantung pada bantuan sesamanya dalam kehidupan bermasyarakat."
+          },
+          {
+            category: "Kearifan Lokal",
+            question: "Kearifan lokal didefinisikan sebagai...",
+            options: [
+              "Gaya hidup modern ala luar negeri yang ditiru masyarakat kita.",
+              "Pandangan hidup dan pengetahuan lokal yang dimiliki oleh suatu masyarakat daerah tertentu.",
+              "Peraturan resmi pemerintah pusat yang wajib ditaati warga.",
+              "Teknologi digital masa kini yang digunakan di perkotaan."
+            ],
+            correctIndex: 1,
+            explanation: "Kearifan lokal adalah nilai-nilai tradisi, aturan, dan pandangan hidup setempat yang diturunkan antargenerasi untuk kelestarian lingkungan."
+          },
+          {
+            category: "Keberagaman Suku",
+            question: "Rumah adat khas dari daerah Sumatra Barat yang memiliki bentuk atap menyerupai tanduk kerbau dikenal dengan nama...",
+            options: ["Rumah Joglo", "Rumah Gadang", "Rumah Honai", "Rumah Tongkonan"],
+            correctIndex: 1,
+            explanation: "Rumah Gadang merupakan rumah adat suku Minangkabau di Sumatra Barat dengan ciri khas atap gonjong menyerupai tanduk kerbau."
+          },
+          {
+            category: "Pencemaran Lingkungan",
+            question: "Membuang limbah plastik dan detergen sembarangan ke dalam aliran sungai dapat menyebabkan terjadinya...",
+            options: ["Pencemaran udara", "Pencemaran tanah saja", "Pencemaran air sungai", "Pencemaran suara"],
+            correctIndex: 2,
+            explanation: "Limbah kimia sabun dan sampah plastik merusak kualitas air sungai dan membahayakan biota air (pencemaran air)."
+          },
+          {
+            category: "Kearifan Lokal",
+            question: "Salah satu manfaat utama dari kearifan lokal dalam mengelola hutan adat atau laut adalah...",
+            options: [
+              "Mempercepat penebangan pohon secara besar-besaran untuk pabrik.",
+              "Menjaga keseimbangan alam agar kelestarian lingkungan tetap terjaga.",
+              "Menarik keuntungan modal sebanyak-banyaknya.",
+              "Mengganti hutan menjadi lahan pemukiman modern."
+            ],
+            correctIndex: 1,
+            explanation: "Kearifan lokal umumnya mengandung nilai pelestarian alam demi kehidupan berkelanjutan yang harmonis."
+          },
+          {
+            category: "Peran Pelajar",
+            question: "Peran dan tugas utama seorang anak di lingkungan sekolah sebagai siswa yang bertanggung jawab adalah...",
+            options: [
+              "Mencari nafkah untuk membantu kepala sekolah.",
+              "Belajar dengan tekun, mentaati aturan sekolah, dan menjaga kebersihannya.",
+              "Mengatur seluruh jadwal ujian para guru.",
+              "Hanya bermain game bersama teman di kantin saat jam pelajaran."
+            ],
+            correctIndex: 1,
+            explanation: "Tugas utama siswa adalah menuntut ilmu dengan disiplin serta menghormati aturan di sekolah."
+          }
+        ]
       },
-      {
-        id: 3,
-        category: "Persatuan dan Kesatuan",
-        question: "Manakah di bawah ini yang merupakan contoh tindakan yang mencerminkan sikap persatuan dan kesatuan di lingkungan sekolah?",
-        options: [
-          "Bekerja sama dalam mengerjakan ujian tertulis di kelas.",
-          "Membantu teman satu geng saja saat mereka mengalami kesulitan.",
-          "Melaksanakan piket kelas bersama-sama sesuai dengan jadwal yang telah ditentukan.",
-          "Mengutamakan kepentingan pribadi di atas piket bersama."
-        ],
-        correctIndex: 2,
-        explanation: "Piket kelas bersama-sama secara adil dan kompak menunjukkan rasa persatuan dan kesatuan di sekolah demi terciptanya kebersihan ruang belajar."
+      mtk: {
+        title: "Matematika",
+        icon: "📐",
+        questions: [
+          {
+            category: "Luas Bangun Datar",
+            question: "Sebuah persegi memiliki panjang sisi $8$ cm. Luas dari persegi tersebut adalah...",
+            options: ["16 cm²", "32 cm²", "64 cm²", "80 cm²"],
+            correctIndex: 2,
+            explanation: "Luas persegi dihitung dengan rumus $S \\times S$. Jadi, $8 \\text{ cm} \\times 8 \\text{ cm} = 64 \\text{ cm}^2$."
+          },
+          {
+            category: "Volume Kubus",
+            question: "Sebuah bak mandi berbentuk kubus memiliki panjang rusuk $5$ dm. Berapakah volume air yang dapat ditampung bak tersebut?",
+            options: ["15 liter", "25 liter", "125 liter", "150 liter"],
+            correctIndex: 2,
+            explanation: "Volume kubus = $s \\times s \\times s = 5 \\times 5 \\times 5 = 125 \\text{ dm}^3$ (atau $125$ liter)."
+          },
+          {
+            category: "Sudut",
+            question: "Besar sudut dari sebuah sudut siku-siku yang dibentuk oleh dua garis tegak lurus adalah...",
+            options: ["45 derajat", "90 derajat", "180 derajat", "360 derajat"],
+            correctIndex: 1,
+            explanation: "Sudut siku-siku memiliki besar sudut tepat $90^{\\circ}$."
+          },
+          {
+            category: "Bangun Datar",
+            question: "Segitiga yang memiliki dua sisi yang sama panjang dan dua sudut yang sama besar dinamakan...",
+            options: ["Segitiga sama sisi", "Segitiga sama kaki", "Segitiga sembarang", "Segitiga siku-siku"],
+            correctIndex: 1,
+            explanation: "Segitiga sama kaki bercirikan memiliki sepasang sisi yang sama panjang dan sudut alas yang sama besar."
+          },
+          {
+            category: "Sudut",
+            question: "Sudut yang besarnya lebih kecil dari $90^{\\circ}$ disebut sebagai sudut...",
+            options: ["Sudut tumpul", "Sudut refleks", "Sudut lancip", "Sudut lurus"],
+            correctIndex: 2,
+            explanation: "Sudut lancip adalah sudut yang rentang besarnya antara $0^{\\circ}$ hingga kurang dari $90^{\\circ}$."
+          },
+          {
+            category: "Bangun Datar",
+            question: "Jumlah seluruh titik sudut yang dimiliki oleh bangun datar trapesium adalah...",
+            options: ["3 titik sudut", "4 titik sudut", "5 titik sudut", "6 titik sudut"],
+            correctIndex: 1,
+            explanation: "Trapesium termasuk dalam keluarga bangun datar segiempat, sehingga memiliki $4$ buah sisi dan $4$ buah titik sudut."
+          },
+          {
+            category: "Satuan Luas",
+            question: "Satuan luas baku yang setara dengan $1$ desimeter persegi ($1 \\text{ dm}^2$) adalah...",
+            options: ["1.000 cm²", "100 cm²", "10 cm²", "1.000.000 mm²"],
+            correctIndex: 1,
+            explanation: "Karena turun satu tangga pada satuan persegi dikali $100$, maka $1 \\text{ dm}^2 = 1 \\times 100 \\text{ cm}^2 = 100 \\text{ cm}^2$."
+          },
+          {
+            category: "Diagram Batang",
+            question: "Data nilai matematika siswa kelas IV disajikan dalam diagram batang. Jika tinggi batang nilai 80 menunjukkan angka 12, maka banyak siswa yang memperoleh nilai 80 adalah...",
+            options: ["8 siswa", "10 siswa", "12 siswa", "14 siswa"],
+            correctIndex: 2,
+            explanation: "Tinggi batang pada diagram batang menunjukkan frekuensi atau banyak data dari kategori yang diukur."
+          },
+          {
+            category: "Komposisi Bangun",
+            question: "Penggabungan beberapa bangun datar sederhana menjadi satu bentuk bangun datar baru disebut...",
+            options: ["Dekomposisi bangun datar", "Komposisi bangun datar", "Transformasi bangun datar", "Pencerminan"],
+            correctIndex: 1,
+            explanation: "Komposisi bangun datar adalah penyusunan atau penggabungan beberapa bangun datar menjadi sebuah pola atau bangun baru."
+          },
+          {
+            category: "Diagram Gambar",
+            question: "Pada diagram gambar, jika 1 gambar bintang mewakili 5 orang siswa, maka 6 gambar bintang mewakili...",
+            options: ["11 siswa", "20 siswa", "25 siswa", "30 siswa"],
+            correctIndex: 3,
+            explanation: "Banyak siswa = jumlah simbol bintang $\\times$ nilai per simbol = $6 \\times 5 = 30$ siswa."
+          }
+        ]
       },
-      {
-        id: 4,
-        category: "Gotong Royong",
-        question: "Secara bahasa, kata gotong royong memiliki arti yang sangat mendalam. Arti dari istilah 'gotong' adalah...",
-        options: [
-          "Bekerja bersama-sama",
-          "Memikul atau mengangkat secara bersama",
-          "Kewajiban sosial masyarakat",
-          "Saling membantu keuangan"
-        ],
-        correctIndex: 1,
-        explanation: "Istilah 'gotong' memiliki arti memikul atau mengangkat beban, sedangkan 'royong' berarti bersama-sama. Jadi, gotong royong adalah memikul beban kehidupan bersama-sama."
+      seni: {
+        title: "Seni Rupa",
+        icon: "🎨",
+        questions: [
+          {
+            category: "Konstruksi Sederhana",
+            question: "Konstruksi sederhana dalam karya seni rupa dapat diartikan sebagai...",
+            options: [
+              "Teknik melukis dengan cat minyak di atas kanvas.",
+              "Penyusunan atau perakitan bahan-bahan menjadi suatu bentuk atau struktur benda tertentu.",
+              "Penilaian terhadap keindahan alam bebas secara tertulis.",
+              "Cara mencampur warna primer menjadi warna sekunder."
+            ],
+            correctIndex: 1,
+            explanation: "Konstruksi berarti menyusun, merakit, atau membangun bahan keras maupun lunak menjadi struktur bentuk tiga dimensi."
+          },
+          {
+            category: "Alat & Bahan",
+            question: "Untuk merekatkan kertas karton atau stik es krim saat membuat karya konstruksi rumah mainan, alat perekat yang paling tepat digunakan adalah...",
+            options: ["Palu besi", "Gunting kertas", "Lem kayu atau glue gun", "Obeng kembang"],
+            correctIndex: 2,
+            explanation: "Lem kayu atau lem tembak (glue gun) memiliki daya rekat yang kuat untuk menempelkan stik kayu atau karton tebal."
+          },
+          {
+            category: "Tanggapan Seni",
+            question: "Kegiatan memberikan tanggapan, ulasan, atau apresiasi berupa penilaian positif terhadap hasil karya seni rupa orang lain bertujuan untuk...",
+            options: [
+              "Menjatuhkan mental pencipta karya agar menyerah.",
+              "Memberikan penghargaan serta masukan membangun agar karya selanjutnya lebih baik.",
+              "Membeli karya seni tersebut dengan harga sangat murah.",
+              "Mengambil alih hak kepemilikan karya seni secara sepihak."
+            ],
+            correctIndex: 1,
+            explanation: "Tanggapan positif dan apresiasi seni bertujuan menghargai kreativitas seniman serta memotivasinya untuk terus berkembang."
+          },
+          {
+            category: "Karya 2D & 3D",
+            question: "Karya seni rupa yang hanya memiliki dimensi panjang dan lebar serta hanya dapat dilihat dari satu arah pandang saja disebut karya...",
+            options: ["Satu dimensi", "Dua dimensi", "Tiga dimensi", "Empat dimensi"],
+            correctIndex: 1,
+            explanation: "Karya dua dimensi (dwimatra) tidak memiliki volume/kedalaman, contohnya lukisan, foto, dan gambar."
+          },
+          {
+            category: "Karya 2D & 3D",
+            question: "Manakah di bawah ini contoh karya seni rupa tiga dimensi yang dapat kita lihat dan raba volumenya dari berbagai arah?",
+            options: ["Lukisan pemandangan", "Patung tanah liat", "Foto wisuda", "Kaligrafi kertas karton"],
+            correctIndex: 1,
+            explanation: "Patung memiliki dimensi panjang, lebar, dan tinggi (kedalaman/volume) sehingga tergolong karya tiga dimensi."
+          },
+          {
+            category: "Apresiasi Seni",
+            question: "Ketika melihat lukisan teman yang sangat indah, contoh kalimat tanggapan positif yang paling sopan dan memotivasi adalah...",
+            options: [
+              "Lukisanmu jelek sekali, gambarku jauh lebih bagus.",
+              "Gambarmu lumayan, tapi warnanya sangat berantakan.",
+              "Wah, lukisanmu bagus sekali! Perpaduan warna dan detail gambarnya sangat menarik.",
+              "Sebaiknya kamu tidak usah melukis lagi di kelas ini."
+            ],
+            correctIndex: 2,
+            explanation: "Tanggapan positif diungkapkan secara santun, fokus pada kelebihan karya, dan menyertakan alasan apresiatif yang logis."
+          },
+          {
+            category: "Alat & Bahan",
+            question: "Bahan alam yang lunak, mudah dibentuk dengan tangan, dan sering digunakan sebagai bahan utama pembuatan gerabah atau keramik adalah...",
+            options: ["Batu kali", "Semen instan", "Tanah liat", "Kayu jati"],
+            correctIndex: 2,
+            explanation: "Tanah liat adalah bahan alam bersifat plastis (mudah dibentuk) yang mengeras jika dibakar, sangat cocok untuk pembuatan keramik."
+          },
+          {
+            category: "Langkah Berkarya",
+            question: "Langkah pertama yang harus dilakukan sebelum mulai membuat suatu karya seni konstruksi dari bahan bekas adalah...",
+            options: ["Memotong seluruh bahan tanpa rencana", "Membuat sketsa desain rancangan bentuk", "Mengecat bahan dengan warna-warni", "Membuang bahan yang tidak disukai"],
+            correctIndex: 1,
+            explanation: "Membuat sketsa rancangan sangat penting agar kita tahu struktur bentuk dan kebutuhan bahan yang akan dirakit."
+          },
+          {
+            category: "Karya Kreatif",
+            question: "Membuat mainan dari botol plastik bekas merupakan contoh kreasi seni rupa yang berdampak positif bagi lingkungan karena...",
+            options: [
+              "Dapat mendatangkan polusi udara baru.",
+              "Membantu mengurangi sampah plastik dengan mendaur ulangnya menjadi barang bermanfaat.",
+              "Membeli bahan pembuatannya sangat mahal.",
+              "Menghabiskan banyak energi listrik di rumah."
+            ],
+            correctIndex: 1,
+            explanation: "Pemanfaatan botol plastik bekas untuk seni rupa ramah lingkungan adalah bagian dari prinsip daur ulang (recycle)."
+          },
+          {
+            category: "Konstruksi Sederhana",
+            question: "Manfaat utama dari belajar membuat konstruksi sederhana adalah melatih...",
+            options: ["Kecepatan berlari", "Keterampilan motorik halus, kesabaran, dan kreativitas", "Kekuatan hafalan kata asing", "Kemampuan berhitung cepat"],
+            correctIndex: 1,
+            explanation: "Seni konstruksi melatih koordinasi tangan-mata, ketelitian merakit, serta daya imajinasi spasial siswa."
+          }
+        ]
       },
-      {
-        id: 5,
-        category: "Gotong Royong",
-        question: "Kegiatan gotong royong memiliki banyak sekali manfaat bagi kehidupan bermasyarakat. Di bawah ini yang merupakan manfaat gotong royong adalah...",
-        options: [
-          "Menimbulkan rasa persaingan ketat antar tetangga.",
-          "Mempererat tali persaudaraan dan menciptakan rasa kebersamaan.",
-          "Membuat pekerjaan kelompok menjadi berjalan sangat lama.",
-          "Memperoleh upah harian yang besar dari rukun tetangga."
-        ],
-        correctIndex: 1,
-        explanation: "Manfaat utama gotong royong adalah mempererat tali persaudaraan, meringankan beban pekerjaan, menghemat waktu, dan menumbuhkan kerukunan hidup."
+      indo: {
+        title: "Bahasa Indonesia",
+        icon: "📚",
+        questions: [
+          {
+            category: "Sejarah Uang",
+            question: "Sebelum uang ditemukan, orang zaman dahulu melakukan pertukaran barang dengan barang untuk memenuhi kebutuhannya. Sistem pertukaran ini dinamakan...",
+            options: ["Barter", "Jual beli", "Monopoli", "Sewa menyewa"],
+            correctIndex: 0,
+            explanation: "Barter adalah cara bertukar barang dengan barang lain secara langsung atas dasar kesepakatan bersama tanpa alat tukar uang."
+          },
+          {
+            category: "Alat Pembayaran",
+            question: "Alat pembayaran yang sah dan wajib diterima dalam transaksi ekonomi sehari-hari di negara Indonesia saat ini adalah...",
+            options: ["Emas batangan", "Uang kartal (kertas dan logam)", "Uang mainan", "Cek luar negeri"],
+            correctIndex: 1,
+            explanation: "Uang kartal resmi rupiah berupa uang kertas dan uang logam merupakan alat pembayaran sah di NKRI."
+          },
+          {
+            category: "Teks Prosedur",
+            question: "Teks yang berisi petunjuk, langkah-langkah, atau tahapan yang berurutan untuk melakukan atau membuat sesuatu disebut...",
+            options: ["Teks narasi", "Teks deskripsi", "Teks prosedur", "Teks eksplanasi"],
+            correctIndex: 2,
+            explanation: "Teks prosedur bertujuan memandu pembaca dalam melakukan aktivitas secara teratur dari awal hingga akhir."
+          },
+          {
+            category: "Kalimat Efektif",
+            question: "Manakah di bawah ini contoh penggunaan kalimat yang paling efektif dan benar sesuai ejaan?",
+            options: [
+              "Banyak anak-anak bermain bola di lapangan sekolah.",
+              "Anak-anak bermain bola di lapangan.",
+              "Anak-anak saling pukul-pukulan bola di lapangan.",
+              "Semua siswa-siswa kelas IV wajib ikut upacara."
+            ],
+            correctIndex: 1,
+            explanation: "Kalimat 'Anak-anak bermain bola di lapangan' hemat kata, logis, dan tidak mengalami pemborosan kata (pleonasme)."
+          },
+          {
+            category: "Majas Metafora",
+            question: "Majas metafora adalah majas yang membandingkan suatu objek dengan objek lain secara langsung karena memiliki sifat yang sama. Contoh kalimat yang mengandung majas metafora adalah...",
+            options: [
+              "Wajahnya sangat bersinar seperti bulan purnama.",
+              "Perpustakaan adalah gudang ilmu bagi semua siswa.",
+              "Angin malam membisikkan kata rindu padaku.",
+              "Suaranya menggelegar membelah angkasa."
+            ],
+            correctIndex: 1,
+            explanation: "'Perpustakaan adalah gudang ilmu' membandingkan perpustakaan secara langsung dengan gudang tanpa kata pembanding (seperti/bagaikan)."
+          },
+          {
+            category: "Ungkapan",
+            question: "Pak Budi sangat bangga kepada Andi karena Andi selalu menjadi 'bintang kelas' di SD IT Ainul Mardhiah. Arti ungkapan 'bintang kelas' adalah...",
+            options: ["Anak yang nakal di kelas", "Siswa paling pintar atau berprestasi", "Anak yang suka melucu", "Siswa yang berbadan paling tinggi"],
+            correctIndex: 1,
+            explanation: "Ungkapan 'bintang kelas' merujuk kepada siswa terbaik yang paling menonjol prestasinya di kelas."
+          },
+          {
+            category: "Menabung",
+            question: "Berikut ini yang merupakan manfaat utama dari kebiasaan menabung sejak usia dini adalah...",
+            options: [
+              "Menjadi boros karena punya simpanan uang banyak.",
+              "Melatih kedisiplinan diri dan mempersiapkan dana darurat masa depan.",
+              "Punya banyak musuh di lingkungan sekolah.",
+              "Uang jajan harian dikurangi sepenuhnya oleh guru."
+            ],
+            correctIndex: 1,
+            explanation: "Menabung membiasakan anak hidup hemat, mandiri finansial, disiplin, dan berjaga-jaga untuk kebutuhan mendesak."
+          },
+          {
+            category: "Konjungsi",
+            question: "Andi ingin pergi bermain sepak bola di lapangan ... hari ini hujan turun dengan sangat lebat. Kata hubung pertentangan yang tepat untuk melengkapi kalimat tersebut adalah...",
+            options: ["dan", "tetapi", "karena", "sehingga"],
+            correctIndex: 1,
+            explanation: "Kata 'tetapi' menyatakan pertentangan antara keinginan bermain bola dengan kondisi cuaca hujan lebat."
+          },
+          {
+            category: "Paragraf Induktif",
+            question: "Paragraf yang letak gagasan atau kalimat utamanya berada di bagian akhir paragraf dinamakan...",
+            options: ["Paragraf deduktif", "Paragraf induktif", "Paragraf campuran", "Paragraf deskriptif"],
+            correctIndex: 1,
+            explanation: "Paragraf induktif dimulai dari penjelasan-penjelasan khusus lalu diakhiri kesimpulan/gagasan utama di akhir paragraf."
+          },
+          {
+            category: "Fakta & Opini",
+            question: "Manakah di bawah ini kalimat yang menyatakan sebuah fakta obyektif (bukan sekadar pendapat)?",
+            options: [
+              "Pelajaran matematika adalah pelajaran paling seru di dunia.",
+              "Ibu kota negara Republik Indonesia saat ini adalah Jakarta.",
+              "Lukisan pemandangan karya Budi sangat indah dipandang mata.",
+              "Hari ini cuaca terasa sangat panas sekali di kota Medan."
+            ],
+            correctIndex: 1,
+            explanation: "Fakta adalah kenyataan yang mutlak kebenarannya dan dapat dibuktikan, seperti letak ibu kota negara."
+          }
+        ]
       },
-      {
-        id: 6,
-        category: "Persatuan dan Kesatuan",
-        question: "Aisyah selalu membantu ibunya mencuci piring setelah makan, sedangkan adiknya bertugas menyapu lantai ruang makan. Sikap kompak dan bersatu di rumah ini akan berdampak pada...",
-        options: [
-          "Pekerjaan rumah tangga menumpuk dan tidak pernah selesai.",
-          "Suasana rumah menjadi harmonis, damai, dan pekerjaan rumah cepat selesai.",
-          "Terjadinya pertengkaran antara kakak dan adik setiap hari.",
-          "Ibu menjadi semakin lelah karena mengawasi anak-anak bekerja."
-        ],
-        correctIndex: 1,
-        explanation: "Sikap bersatu, kompak, dan membagi tugas dengan adil di rumah menciptakan keharmonisan keluarga serta meredakan beban pekerjaan orang tua."
+      arab: {
+        title: "Bahasa Arab",
+        icon: "🕌",
+        questions: [
+          {
+            category: "Ungkapan Sederhana",
+            question: "Apabila ada teman yang menyapa kamu dengan ucapan 'صَبَاحُ الْخَيْرِ' (shobahul khoir), maka jawaban yang tepat adalah...",
+            options: ["مَسَاءُ الْخَيْرِ", "صَبَاحُ النُّوْرِ", "أَهْلاً وَسَهْلاً", "الْحَمْدُ للهِ"],
+            correctIndex: 1,
+            explanation: "Sapaan 'Selamat pagi' (shobahul khoir) dijawab dengan 'Selamat pagi juga' (shobahun nuur)."
+          },
+          {
+            category: "Keluarga Rasulullah",
+            question: "Siapakah nama Ibunda (Ibu kandung) dari Nabi Muhammad ﷺ yang mulia?",
+            options: ["حَلِيْمَةُ السَّعْدِيَّة", "آْمِنَةُ بِنْتُ وَهْبٍ", "خَدِيْجَةُ الْكُبْرَى", "عَائِشَةُ الصِّدِّيْقَة"],
+            correctIndex: 1,
+            explanation: "Ibunda Rasulullah ﷺ adalah Sayyidah Aminah binti Wahab."
+          },
+          {
+            category: "Kata Tunjuk",
+            question: "Kata tunjuk 'هَذَا' (hadza) digunakan untuk menunjuk benda dekat yang memiliki jenis/sifat...",
+            options: ["Muzakkar (Laki-laki / tanpa ta' marbutah)", "Muannas (Perempuan / ada ta' marbutah)", "Benda jauh tunggal", "Jamak berakal"],
+            correctIndex: 0,
+            explanation: "'Hadza' adalah Isim Isyarah lil qorib (kata tunjuk dekat) khusus untuk kata muzakkar."
+          },
+          {
+            category: "Kata Tunjuk",
+            question: "Manakah kalimat bahasa Arab di bawah ini yang paling tepat menggunakan kata tunjuk dekat muannas?",
+            options: ["هَذَا كِتَابٌ", "هَذِهِ مَدْرَسَةٌ", "هَذَا أُسْتَاذَةٌ", "هَذِهِ قَلَمٌ"],
+            correctIndex: 1,
+            explanation: "Kata 'madrasatun' adalah muannas (memiliki ta' marbutah ة), sehingga berpasangan dengan 'hadzihi'."
+          },
+          {
+            category: "Keluarga",
+            question: "Kata 'أَبٌ' (Abun) jika diterjemahkan ke dalam bahasa Indonesia memiliki arti...",
+            options: ["Ibu", "Ayah", "Kakek", "Paman"],
+            correctIndex: 1,
+            explanation: "'Abun' artinya ayah, sedangkan 'Ummun' artinya ibu."
+          },
+          {
+            category: "Percakapan",
+            question: "Jika ditanya 'هَلْ هَذَا قَلَمٌ؟' (Apakah ini pena?) dan benda itu memang benar pena, maka jawaban kamu adalah...",
+            options: ["لَا، هَذَا كِتَابٌ", "نَعَمْ، هَذَا قَلَمٌ", "أَهْلاً بِكَ", "مَنْ هَذَا؟"],
+            correctIndex: 1,
+            explanation: "Pertanyaan dengan 'Hal' (apakah) dijawab dengan 'Na'am' (Ya) jika sesuai atau 'Laa' (Tidak) jika tidak sesuai."
+          },
+          {
+            category: "Keluarga Rasulullah",
+            question: "Kakek Nabi Muhammad ﷺ yang mengasuh beliau setelah ibundanya wafat bernama...",
+            options: ["أَبُو طَالِبٍ", "عَبْدُ الْمُطَّلِبِ", "أَبُو لَهَبٍ", "الْعَبَّاسُ"],
+            correctIndex: 1,
+            explanation: "Kakek Rasulullah yang sangat menyayangi beliau bernama Abdul Muthalib."
+          },
+          {
+            category: "Keluarga",
+            question: "Arti dari kosakata 'أُخْتٌ' (Ukhtun) dalam susunan anggota keluarga adalah...",
+            options: ["Saudara laki-laki", "Saudara perempuan", "Anak laki-laki", "Bibi"],
+            correctIndex: 1,
+            explanation: "'Ukhtun' berarti saudara perempuan, sedangkan 'Akhun' berarti saudara laki-laki."
+          },
+          {
+            category: "Profesi",
+            question: "Kosakata bahasa Arab 'طَبِيْبٌ' (Thobiibun) memiliki arti profesi sebagai seorang...",
+            options: ["Guru", "Dokter", "Petani", "Polisi"],
+            correctIndex: 1,
+            explanation: "'Thobiibun' berarti dokter, sedangkan guru adalah 'Ustadzun' atau 'Mudarrisun'."
+          },
+          {
+            category: "Kosakata",
+            question: "Kata tanya 'مَنْ' (Man) dalam bahasa Arab digunakan untuk menanyakan...",
+            options: ["Apa", "Siapa", "Dimana", "Kapan"],
+            correctIndex: 1,
+            explanation: "Kata tanya 'Man' berarti 'Siapa' (khusus untuk subjek berakal)."
+          }
+        ]
       },
-      {
-        id: 7,
-        category: "Keberagaman Sosial",
-        question: "Keberagaman sosial budaya bangsa Indonesia merupakan kekayaan yang tak ternilai harganya. Cara memandang keberagaman budaya ini yang paling tepat adalah...",
-        options: [
-          "Sebagai kekayaan bangsa yang harus dilestarikan dan disyukuri.",
-          "Sebagai kelemahan bangsa yang memicu konflik perpecahan.",
-          "Sebagai hal biasa yang tidak perlu diperhatikan perkembangannya.",
-          "Sebagai penghambat kemajuan pembangunan nasional negara modern."
-        ],
-        correctIndex: 0,
-        explanation: "Keberagaman sosial budaya di Indonesia adalah anugerah Tuhan Yang Maha Esa dan merupakan kekayaan identitas bangsa yang wajib kita lestarikan."
+      inggris: {
+        title: "Bahasa Inggris",
+        icon: "🇬🇧",
+        questions: [
+          {
+            category: "Telling Time",
+            question: "Look at the analog clock. The short hand points to 9 and the long hand points to 12. What time is it?",
+            options: ["It is half past nine", "It is nine o'clock", "It is quarter to nine", "It is ten o'clock"],
+            correctIndex: 1,
+            explanation: "Jika jarum pendek di angka 9 dan jarum panjang di angka 12, maka jam menunjukkan waktu tepat pukul 9 (nine o'clock)."
+          },
+          {
+            category: "Housework & Can",
+            question: "My bedroom is very dirty and messy. I ... sweep and clean my bedroom by myself.",
+            options: ["cannot", "can", "am not", "do"],
+            correctIndex: 1,
+            explanation: "Modal verb 'can' (bisa/mampu) tepat digunakan untuk mengekspresikan kesanggupan membersihkan kamar sendiri."
+          },
+          {
+            category: "Daily Activities",
+            question: "Every morning, Farhan ... his teeth before eating breakfast.",
+            options: ["brush", "brushes", "brushing", "brushed"],
+            correctIndex: 1,
+            explanation: "Dalam Simple Present Tense, subjek tunggal 'Farhan' (He) diikuti oleh kata kerja dengan akhiran -es/-s (brushes)."
+          },
+          {
+            category: "Adverbs of Frequency",
+            question: "Aisyah is a very disciplined student. She ... forgets to do her homework. She always finishes it on time.",
+            options: ["always", "usually", "sometimes", "never"],
+            correctIndex: 3,
+            explanation: "Karena Aisyah murid yang disiplin, maka dia 'tidak pernah' (never) lupa mengerjakan tugas rumahnya."
+          },
+          {
+            category: "Telling Time",
+            question: "The clock shows 07:30. In English, we can say it is...",
+            options: ["half past seven", "quarter past seven", "seven o'clock", "half past eight"],
+            correctIndex: 0,
+            explanation: "07:30 dinyatakan dengan 'half past seven' (setengah jam melewati jam 7)."
+          },
+          {
+            category: "Housework",
+            question: "In the kitchen, Sarah usually helps her mother to ... the dishes after dinner.",
+            options: ["wash", "cook", "sweep", "study"],
+            correctIndex: 0,
+            explanation: "Kata kerja yang cocok untuk piring kotor setelah makan adalah 'wash the dishes' (mencuci piring)."
+          },
+          {
+            category: "Simple Present Tense",
+            question: "They ... football together in the school yard every Friday afternoon.",
+            options: ["plays", "play", "playing", "played"],
+            correctIndex: 1,
+            explanation: "Untuk subjek jamak 'They', kata kerja bentuk pertama tetap dalam bentuk dasar tanpa tambahan -s (play)."
+          },
+          {
+            category: "Vocabulary",
+            question: "What is the English word for 'menyiram bunga'?",
+            options: ["cleaning the floor", "watering the flowers", "cooking food", "feeding the pet"],
+            correctIndex: 1,
+            explanation: "'Watering the flowers' adalah menyiram bunga, sedangkan 'feeding' adalah memberi makan hewan."
+          },
+          {
+            category: "Adverbs of Frequency",
+            question: "I ... drink milk in the morning. I drink it almost every day, but sometimes I drink tea instead.",
+            options: ["never", "usually", "seldom", "rarely"],
+            correctIndex: 1,
+            explanation: "'Usually' (biasanya) mengekspresikan kebiasaan rutin yang hampir selalu dilakukan."
+          },
+          {
+            category: "Modal Can",
+            question: "A bird ... fly high in the sky, but a fish ...",
+            options: ["can - can", "cannot - can", "can - cannot", "cannot - cannot"],
+            correctIndex: 2,
+            explanation: "Burung 'bisa' (can) terbang, sedangkan ikan 'tidak bisa' (cannot) terbang di udara."
+          }
+        ]
       },
-      {
-        id: 8,
-        category: "Gotong Royong",
-        question: "Salah satu contoh bentuk gotong royong dalam menjaga keamanan lingkungan perumahan di malam hari adalah...",
-        options: [
-          "Melaksanakan ronda malam secara bergiliran (Poskamling).",
-          "Menyewa penjaga keamanan tanpa keterlibatan warga.",
-          "Mengunci pintu rumah masing-masing dengan rapat.",
-          "Membiarkan halaman rumah diterangi lampu jalan saja."
-        ],
-        correctIndex: 0,
-        explanation: "Ronda malam atau siskamling merupakan bentuk gotong royong dalam bidang pertahanan dan keamanan lingkungan oleh warga secara bersama-sama."
+      pjok: {
+        title: "Pendidikan Jasmani Olahraga & Kesehatan",
+        icon: "⚽",
+        questions: [
+          {
+            category: "Senam Ritmik",
+            question: "Alat bantu yang umum dan sering digunakan dalam pelaksanaan senam ritmik (irama) adalah...",
+            options: ["Palu dan kayu", "Simpai (hoop), pita, dan bola", "Raket bulutangkis", "Meja tenis"],
+            correctIndex: 1,
+            explanation: "Senam ritmik sering memanfaatkan alat seni seperti pita, simpai (gada), bola, dan topi."
+          },
+          {
+            category: "Aktivitas Air",
+            question: "Gaya renang yang posisi dadanya menghadap ke permukaan air dan gerakan kakinya menendang melingkar seperti katak disebut...",
+            options: ["Gaya bebas", "Gaya dada (katak)", "Gaya punggung", "Gaya kupu-kupu"],
+            correctIndex: 1,
+            explanation: "Renang gaya dada (breaststroke) sangat mirip gerakan berenang katak di air."
+          },
+          {
+            category: "Daya Tahan Otot",
+            question: "Latihan fisik di bawah ini yang bertujuan utama untuk melatih daya tahan dan kekuatan otot perut adalah...",
+            options: ["Push-up", "Sit-up", "Pull-up", "Jogging"],
+            correctIndex: 1,
+            explanation: "Gerakan sit-up berfokus melatih kontraksi otot-otot di bagian perut."
+          },
+          {
+            category: "Kebugaran Jasmani",
+            question: "Untuk menjaga daya tahan jantung dan paru-paru (kardiovaskular), olahraga kardio rutin yang paling baik kita lakukan adalah...",
+            options: ["Catur", "Lari santai (jogging) atau bersepeda", "Tidur siang", "Angkat besi berat"],
+            correctIndex: 1,
+            explanation: "Jogging dan bersepeda memicu denyut jantung stabil sehingga menjaga kebugaran sistem pernapasan."
+          },
+          {
+            category: "Penyakit Menular",
+            question: "Manakah di bawah ini kelompok penyakit yang tergolong menular secara langsung melalui udara atau kontak fisik?",
+            options: ["Diabetes, jantung, hipertensi", "Flu, batuk, cacar air, campak", "Asma, maag, sariawan", "Patah tulang, kram otot"],
+            correctIndex: 1,
+            explanation: "Penyakit flu, cacar, dan batuk menyebar secara aerosol lewat bersin atau sentuhan kulit."
+          },
+          {
+            category: "Kebersihan Diri",
+            question: "Cara terbaik untuk menjaga kebersihan dan kesehatan alat reproduksi diri kita adalah...",
+            options: [
+              "Tidak pernah mengganti pakaian dalam.",
+              "Membilas bersih dengan air mengalir dan mengeringkannya setelah buang air.",
+              "Menggunakan celana yang super ketat setiap hari.",
+              "Membiarkannya lembab setelah berolahraga."
+            ],
+            correctIndex: 1,
+            explanation: "Alat reproduksi harus senantiasa dalam keadaan bersih dan kering agar terbebas dari jamur dan bakteri penyakit."
+          },
+          {
+            category: "Permainan Bola",
+            question: "Olahraga permainan bola di bawah ini yang dikategorikan sebagai permainan bola besar adalah...",
+            options: ["Tenis meja", "Kasti", "Sepak bola", "Bulu tangkis"],
+            correctIndex: 2,
+            explanation: "Sepak bola, basket, dan voli menggunakan ukuran bola besar."
+          },
+          {
+            category: "Gerak Lokomotor",
+            question: "Gerakan melompat, berlari, dan berjalan merupakan contoh dari pola gerak dasar...",
+            options: ["Lokomotor (berpindah tempat)", "Non-lokomotor (tidak berpindah tempat)", "Manipulatif", "Statik"],
+            correctIndex: 0,
+            explanation: "Gerak lokomotor ditandai dengan perpindahan posisi tubuh dari satu titik ke titik lain."
+          },
+          {
+            category: "Permainan Bola Kecil",
+            question: "Alat pemukul dalam permainan bola kecil tradisional kasti terbuat dari bahan...",
+            options: ["Besi padat", "Kayu", "Plastik tipis", "Karet elastis"],
+            correctIndex: 1,
+            explanation: "Tongkat pemukul kasti terbuat dari kayu kuat agar dapat meluncurkan bola kasti secara maksimal."
+          },
+          {
+            category: "Kebugaran Jasmani",
+            question: "Melakukan peregangan (stretching) sebelum melakukan olahraga berat bertujuan utama untuk...",
+            options: ["Mempercepat lapar", "Mencegah cedera otot dan kram", "Mengantuk di lapangan", "Membeli sepatu baru"],
+            correctIndex: 1,
+            explanation: "Pemanasan dan peregangan meningkatkan elastisitas otot dan melancarkan aliran darah sehingga meminimalkan risiko cedera."
+          }
+        ]
       },
-      {
-        id: 9,
-        category: "Persatuan dan Kesatuan",
-        question: "Sikap negatif yang harus dihindari karena dapat merusak rasa persatuan dan kesatuan bangsa Indonesia adalah...",
-        options: [
-          "Toleransi",
-          "Egois (mementingkan diri sendiri)",
-          "Rendah hati",
-          "Saling menghargai"
-        ],
-        correctIndex: 1,
-        explanation: "Sikap egois atau mementingkan diri sendiri dan kelompoknya di atas kepentingan bersama dapat memicu perpecahan serta merusak persatuan."
+      btq: {
+        title: "Baca Tulis Al-Qur'an",
+        icon: "📖",
+        questions: [
+          {
+            category: "Hukum Mad",
+            question: "Mad Shilah Qashirah terjadi apabila ada Ha Dhamir (ـه / ه) yang terletak di antara dua huruf hidup (berharakat), dan setelahnya...",
+            options: [
+              "Terdapat huruf Hamzah (ء).",
+              "TIDAK ada huruf Hamzah (ء).",
+              "Ada huruf bertasydid.",
+              "Terdapat huruf mati/sukun."
+            ],
+            correctIndex: 1,
+            explanation: "Mad Shilah Qashirah dibaca pendek (2 harakat) karena ha dhamir bertemu huruf hidup selain hamzah."
+          },
+          {
+            category: "Hukum Mad",
+            question: "Berapakah panjang ketukan/harakat dari hukum bacaan Mad Shilah Qashirah?",
+            options: ["1 harakat", "2 harakat (1 alif)", "4-5 harakat", "6 harakat"],
+            correctIndex: 1,
+            explanation: "Panjang bacaan Mad Shilah Qashirah disepakati dibaca sepanjang 2 harakat."
+          },
+          {
+            category: "Lafadz Allah",
+            question: "Lafadz Allah (Lam Jalalah) wajib dibaca secara tebal (Tafkhim) apabila didahului oleh huruf yang berharakat...",
+            options: ["Kasrah ( ِ)", "Fathah ( َ) atau Dhammah ( ُ)", "Sukun ( ْ)", "Tanwin kasrah"],
+            correctIndex: 1,
+            explanation: "Lam jalalah dibaca tebal (tafkhim) jika didahului harakat fathah atau dhammah, contohnya 'Rasulullah'."
+          },
+          {
+            category: "Lafadz Allah",
+            question: "Kondisi di mana lafadz Lam Jalalah harus dibaca tipis (Tarqiq) adalah jika didahului oleh harakat...",
+            options: ["Fathah", "Dhammah", "Kasrah", "Tasydid"],
+            correctIndex: 2,
+            explanation: "Jika didahului kasrah, lam jalalah dibaca tipis (tarqiq), contohnya 'Bismillah'."
+          },
+          {
+            category: "Nun Sukun / Tanwin",
+            question: "Hukum tajwid Izhar Halqi terjadi apabila ada Nun Sukun (نْ) atau Tanwin bertemu dengan salah satu dari huruf halqi (tenggorokan) yang berjumlah...",
+            options: ["4 huruf", "6 huruf", "15 huruf", "28 huruf"],
+            correctIndex: 1,
+            explanation: "Huruf Izhar Halqi ada 6, yaitu: ء, هـ, ع, ح, غ, خ."
+          },
+          {
+            category: "Nun Sukun / Tanwin",
+            question: "Bagaimanakah cara membaca hukum tajwid Izhar Halqi yang benar?",
+            options: ["Samar-samar disertai dengung", "Jelas tanpa disertai dengung sedikit pun", "Melebur ke huruf berikutnya", "Membalik suara menjadi Mim"],
+            correctIndex: 1,
+            explanation: "'Izhar' secara bahasa artinya jelas, sehingga dibaca jelas bunyinya tanpa dengung."
+          },
+          {
+            category: "Nun Sukun / Tanwin",
+            question: "Apabila ada Nun Sukun (نْ) bertemu dengan huruf Ra (ر) atau Lam (ل), hukum bacaannya adalah...",
+            options: ["Idgham Bighunnah", "Idgham Bilaghunnah", "Ikhfa Haqiqi", "Iqlab"],
+            correctIndex: 1,
+            explanation: "Idgham Bilaghunnah dibaca melebur tanpa dengung ketika nun sukun/tanwin bertemu lam atau ra."
+          },
+          {
+            category: "Tanda Waqaf",
+            question: "Tanda waqaf berbentuk huruf Mim kecil (م) menunjukkan perintah membaca Al-Qur'an secara...",
+            options: ["Boleh berhenti boleh terus", "Harus berhenti (Waqaf Lazim)", "Dilarang berhenti", "Lebih utama dibaca terus"],
+            correctIndex: 1,
+            explanation: "Tanda waqaf Mim kecil (م) adalah waqaf lazim yang artinya wajib/harus berhenti."
+          },
+          {
+            category: "Mim Sukun",
+            question: "Hukum bacaan Izhar Syafawi terjadi apabila ada Mim Sukun (مْ) bertemu dengan huruf hijaiyah selain...",
+            options: ["Alif dan Hamzah", "Mim (م) dan Ba (ب)", "Waw dan Fa", "Seluruh huruf halqi"],
+            correctIndex: 1,
+            explanation: "Izhar syafawi berlaku saat mim sukun bertemu semua huruf hijaiyah selain mim (idgham mimi) dan ba (ikhfa syafawi)."
+          },
+          {
+            category: "Mim Sukun",
+            question: "Apabila ada Mim Sukun (مْ) bertemu dengan huruf Ba (ب), hukum bacaan tersebut bernama...",
+            options: ["Ikhfa Syafawi", "Idhar Syafawi", "Idgham Mimi", "Iqlab"],
+            correctIndex: 0,
+            explanation: "Mim sukun bertemu Ba dibaca secara samar dan berdengung, disebut Ikhfa Syafawi."
+          }
+        ]
       },
-      {
-        id: 10,
-        category: "Gotong Royong",
-        question: "Gotong royong merupakan kepribadian asli bangsa Indonesia yang diwariskan turun-temurun. Nilai dasar yang paling menonjol dalam gotong royong adalah...",
-        options: [
-          "Imbalan materi",
-          "Kekeluargaan dan sukarela",
-          "Kekerasan fisik",
-          "Kepentingan politik"
-        ],
-        correctIndex: 1,
-        explanation: "Semangat kekeluargaan, kebersamaan, serta rasa sukarela (tanpa mengharap imbalan) merupakan nilai moral yang mendasari budaya gotong royong."
-      },
-
-      // --- MATERI 2: Pancasila, Sikap sesuai Sila, Nilai Kepahlawanan ---
-      {
-        id: 11,
-        category: "Nilai Pancasila",
-        question: "Menghormati teman yang sedang menjalankan ibadah puasa dan tidak makan dengan sengaja di depannya merupakan bentuk pengamalan sila Pancasila yang berlambang...",
-        options: [
-          "Bintang emas (Sila ke-1)",
-          "Rantai emas (Sila ke-2)",
-          "Pohon beringin (Sila ke-3)",
-          "Kepala banteng (Sila ke-4)"
-        ],
-        correctIndex: 0,
-        explanation: "Saling menghormati antarumat beragama adalah bentuk pengamalan Sila ke-1 (Ketuhanan Yang Maha Esa) yang berlambangkan Bintang Emas."
-      },
-      {
-        id: 12,
-        category: "Nilai Pancasila",
-        question: "Ketika melihat berita bencana gempa bumi, para siswa kelas IV mengumpulkan pakaian layak pakai dan uang saku untuk disumbangkan kepada para korban. Sikap ini sesuai dengan sila Pancasila yang berbunyi...",
-        options: [
-          "Ketuhanan Yang Maha Esa",
-          "Kemanusiaan yang adil dan beradab",
-          "Persatuan Indonesia",
-          "Keadilan sosial bagi seluruh rakyat Indonesia"
-        ],
-        correctIndex: 1,
-        explanation: "Aksi kemanusiaan, empati, dan tolong-menolong kepada korban bencana merupakan wujud pengamalan Sila ke-2 (Kemanusiaan yang adil dan beradab)."
-      },
-      {
-        id: 13,
-        category: "Nilai Pancasila",
-        question: "Mencintai produk dalam negeri, bangga menggunakan batik, serta mengutamakan membeli barang buatan perajin lokal merupakan pengamalan Pancasila sila ketiga, yaitu...",
-        options: [
-          "Ketuhanan Yang Maha Esa",
-          "Kemanusiaan yang adil dan beradab",
-          "Persatuan Indonesia",
-          "Keadilan sosial bagi seluruh rakyat Indonesia"
-        ],
-        correctIndex: 2,
-        explanation: "Cinta tanah air dan bangga menggunakan produk dalam negeri adalah cerminan rasa nasionalisme yang terkandung pada Sila ke-3 (Persatuan Indonesia)."
-      },
-      {
-        id: 14,
-        category: "Nilai Pancasila",
-        question: "Saat pembagian tugas kelompok di kelas, terjadi perbedaan pendapat antara Andi dan Budi. Mereka kemudian duduk bersama untuk mendiskusikan masalah tersebut hingga mencapai keputusan bersama yang disepakati. Kegiatan ini mencerminkan sila keempat Pancasila, yaitu...",
-        options: [
-          "Menghargai hasil karya orang lain.",
-          "Mengutamakan musyawarah untuk mencapai mufakat.",
-          "Membantu orang lain secara adil tanpa tebang pilih.",
-          "Berani membela kebenaran dan keadilan."
-        ],
-        correctIndex: 1,
-        explanation: "Sila ke-4 mengamanatkan pentingnya musyawarah untuk mufakat dalam menyelesaikan masalah bersama tanpa memaksakan kehendak."
-      },
-      {
-        id: 15,
-        category: "Nilai Pancasila",
-        question: "Setiap warga negara Indonesia memiliki hak dan kewajiban yang sama di mata hukum. Kita harus memperlakukan semua orang dengan adil dan menghargai hak-hak mereka. Sikap tersebut mencerminkan sila Pancasila yang berlambangkan...",
-        options: [
-          "Rantai",
-          "Pohon Beringin",
-          "Padi dan Kapas",
-          "Kepala Banteng"
-        ],
-        correctIndex: 2,
-        explanation: "Padi dan kapas adalah lambang Sila ke-5 (Keadilan sosial bagi seluruh rakyat Indonesia) yang menuntut keadilan, keseimbangan hak, dan kewajiban."
-      },
-      {
-        id: 16,
-        category: "Nilai Kepahlawanan",
-        question: "Seorang pahlawan berjuang tanpa pamrih mengorbankan waktu, tenaga, bahkan nyawanya demi kemerdekaan bangsa Indonesia. Sikap teladan pahlawan yang mengutamakan kepentingan bangsa di atas kepentingan pribadi disebut...",
-        options: [
-          "Egois",
-          "Rela berkorban (Patriotisme)",
-          "Sombong",
-          "Individualis"
-        ],
-        correctIndex: 1,
-        explanation: "Rela berkorban demi nusa dan bangsa (Patriotisme) merupakan nilai keteladanan luhur para pahlawan pejuang kemerdekaan yang patut kita contoh."
-      },
-      {
-        id: 17,
-        category: "Nilai Kepahlawanan",
-        question: "Sebagai siswa kelas IV SD, cara paling tepat yang dapat kita lakukan untuk menghargai dan melanjutkan perjuangan jasa para pahlawan bangsa adalah...",
-        options: [
-          "Ikut berperang menggunakan senjata tajam melawan musuh.",
-          "Belajar dengan tekun dan disiplin untuk membangun masa depan bangsa.",
-          "Membuat coretan-coretan di monumen bersejarah agar terkenal.",
-          "Menonton film perjuangan saja tanpa perlu belajar keras."
-        ],
-        correctIndex: 1,
-        explanation: "Bagi pelajar, bentuk menghargai jasa pahlawan yang paling nyata dan relevan adalah dengan belajar sungguh-sungguh serta berprestasi."
-      },
-      {
-        id: 18,
-        category: "Nilai Pancasila",
-        question: "Sikap berani mengakui kesalahan diri sendiri dan meminta maaf secara jantan merupakan cerminan pengamalan sila Pancasila yang didasari nilai kepahlawanan...",
-        options: [
-          "Kejujuran dan ksatria",
-          "Keberanian membela kejahatan",
-          "Sikap tak mau kalah",
-          "Kepasrahan tanpa usaha"
-        ],
-        correctIndex: 0,
-        explanation: "Berani jujur mengakui kesalahan dan berjiwa ksatria untuk meminta maaf adalah akhlak terpuji yang mencerminkan keteladanan pahlawan."
-      },
-      {
-        id: 19,
-        category: "Nilai Kepahlawanan",
-        question: "Para pahlawan bangsa memegang teguh persatuan untuk mengusir penjajah. Semboyan terkenal yang membakar semangat persatuan mereka adalah...",
-        options: [
-          "Beda itu biasa, sama itu luar biasa.",
-          "Bersatu kita teguh, bercerai kita runtuh.",
-          "Utamakan diri sendiri baru menolong sesama.",
-          "Pantang pulang sebelum membawa hadiah kekayaan."
-        ],
-        correctIndex: 1,
-        explanation: "'Bersatu kita teguh, bercerai kita runtuh' adalah semboyan yang menekankan betapa pentingnya kesatuan kekuatan dalam meraih kemerdekaan."
-      },
-      {
-        id: 20,
-        category: "Nilai Pancasila",
-        question: "Tidak membeda-bedakan teman berdasarkan status sosial, kaya atau miskin, dalam pergaulan sehari-hari di sekolah adalah perilaku yang mencerminkan...",
-        options: [
-          "Keadilan sosial (Sila ke-5)",
-          "Keraguan berteman",
-          "Sifat acuh tak acuh",
-          "Pembedaan ras"
-        ],
-        correctIndex: 0,
-        explanation: "Menghormati hak teman tanpa memandang latar belakang ekonomi/sosial merupakan perwujudan keadilan sosial bagi seluruh rakyat Indonesia."
-      },
-
-      // --- MATERI 3: Perumusan Pancasila & BPUPKI ---
-      {
-        id: 21,
-        category: "Perumusan Pancasila",
-        question: "Hari Lahir Pancasila diperingati secara nasional oleh seluruh rakyat Indonesia pada tanggal...",
-        options: [
-          "1 Juni",
-          "17 Agustus",
-          "1 Oktober",
-          "20 Mei"
-        ],
-        correctIndex: 0,
-        explanation: "Hari Lahir Pancasila diperingati setiap tanggal 1 Juni, merujuk pada momen pidato Ir. Soekarno dalam sidang BPUPKI tanggal 1 Juni 1945."
-      },
-      {
-        id: 22,
-        category: "Perumusan Pancasila",
-        question: "Pancasila dirumuskan melalui badan bentukan Jepang yang bertugas menyelidiki persiapan kemerdekaan Indonesia. Kepanjangan dari BPUPKI adalah...",
-        options: [
-          "Badan Pembuat Undang-Undang Persiapan Kemerdekaan Indonesia",
-          "Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia",
-          "Badan Persatuan Umum Pemuda Kemerdekaan Indonesia",
-          "Badan Penasihat Urusan Politik Kemerdekaan Indonesia"
-        ],
-        correctIndex: 1,
-        explanation: "BPUPKI merupakan singkatan dari Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia (dalam bahasa Jepang disebut Dokuritsu Junbi Cosakai)."
-      },
-      {
-        id: 23,
-        category: "Perumusan Pancasila",
-        question: "BPUPKI dibentuk pada tanggal 1 Maret 1945. Tokoh nasional terhormat yang ditunjuk dan dipercaya menjabat sebagai ketua BPUPKI adalah...",
-        options: [
-          "Ir. Soekarno",
-          "Drs. Mohammad Hatta",
-          "Dr. K.R.T. Radjiman Wedyodiningrat",
-          "Mr. Muhammad Yamin"
-        ],
-        correctIndex: 2,
-        explanation: "Ketua BPUPKI adalah Dr. K.R.T. Radjiman Wedyodiningrat, didampingi dua wakil ketua yaitu Ichibangase Yosio (Jepang) dan R.P. Soeroso."
-      },
-      {
-        id: 24,
-        category: "Perumusan Pancasila",
-        question: "Dalam sidang pertama BPUPKI, terdapat tiga tokoh utama perumus dasar negara Indonesia. Ketiga tokoh nasional tersebut adalah...",
-        options: [
-          "Ir. Soekarno, Drs. Mohammad Hatta, dan Ki Hajar Dewantara",
-          "Mr. Muhammad Yamin, Dr. Soepomo, dan Ir. Soekarno",
-          "KH. Wahid Hasyim, Dr. Radjiman, dan Mr. Ahmad Soebardjo",
-          "Drs. Mohammad Hatta, Ki Bagus Hadikusumo, dan Sutan Syahrir"
-        ],
-        correctIndex: 1,
-        explanation: "Tiga tokoh perumus usulan dasar negara dalam sidang BPUPKI adalah Mr. Muhammad Yamin (29 Mei 1945), Dr. Soepomo (31 Mei 1945), dan Ir. Soekarno (1 Juni 1945)."
-      },
-      {
-        id: 25,
-        category: "Perumusan Pancasila",
-        question: "Pada tanggal 1 Juni 1945, Ir. Soekarno menyampaikan usulan dasar negara yang beliau beri nama Pancasila. Di bawah ini yang merupakan salah satu asas dalam usulan Ir. Soekarno adalah...",
-        options: [
-          "Peri Kebangsaan",
-          "Persatuan",
-          "Kebangsaan Indonesia (Nasionalisme)",
-          "Peri Ketuhanan"
-        ],
-        correctIndex: 2,
-        explanation: "Lima asas usulan Ir. Soekarno: 1. Kebangsaan Indonesia, 2. Internasionalisme atau Peri-kemanusiaan, 3. Mufakat atau Demokrasi, 4. Kesejahteraan Sosial, 5. Ketuhanan yang berkebudayaan."
+      pai: {
+        title: "Pendidikan Agama Islam",
+        icon: "✨",
+        questions: [
+          {
+            category: "Kisah Hijrah",
+            question: "Apakah arti dari kata 'Hijrah' secara bahasa dalam ajaran Islam?",
+            options: ["Pergi berlibur", "Menetap di suatu tempat", "Berpindah atau memutuskan hubungan", "Berperang melawan musuh"],
+            correctIndex: 2,
+            explanation: "Secara bahasa, hijrah berasal dari kata 'hajara' yang berarti berpindah tempat atau meninggalkan keburukan menuju kebaikan."
+          },
+          {
+            category: "Kisah Hijrah",
+            question: "Salah satu sebab utama Nabi Muhammad saw. dan umat Islam melakukan hijrah dari kota Makkah ke kota Madinah adalah...",
+            options: [
+              "Mencari harta kekayaan di tempat baru.",
+              "Boikot dan siksaan keji dari kaum kafir Quraisy yang semakin meningkat.",
+              "Kota Makkah terkena bencana kekeringan.",
+              "Keinginan mendirikan kerajaan besar di Madinah."
+            ],
+            correctIndex: 1,
+            explanation: "Kekejaman kaum Quraisy yang memuncak serta ancaman pembunuhan terhadap Rasulullah memicu turunnya perintah Allah untuk berhijrah."
+          },
+          {
+            category: "Kisah Hijrah",
+            question: "Ketika rumah Rasulullah dikepung kaum Quraisy, pemuda pemberani yang bersedia menempati tempat tidur beliau untuk mengelabui musuh adalah...",
+            options: ["Abu Bakar Ash-Shiddiq", "Ali bin Abi Thalib", "Umar bin Khattab", "Usman bin Affan"],
+            correctIndex: 1,
+            explanation: "Sayyidina Ali bin Abi Thalib rela mempertaruhkan nyawanya tidur di ranjang Nabi Muhammad saw. saat malam keberangkatan hijrah."
+          },
+          {
+            category: "Kisah Hijrah",
+            question: "Siapakah nama sahabat setia yang menemani Nabi Muhammad saw. dalam perjalanan hijrah bersembunyi di dalam Gua Tsur?",
+            options: ["Umar bin Khattab", "Abu Bakar Ash-Shiddiq", "Utsman bin Affan", "Hamzah bin Abdul Muthalib"],
+            correctIndex: 1,
+            explanation: "Sayyidina Abu Bakar Ash-Shiddiq adalah sahabat terdekat yang mendampingi Nabi selama pengejaran kaum kafir di Gua Tsur."
+          },
+          {
+            category: "Kisah Hijrah",
+            question: "Berapa lamakah Rasulullah saw. dan sahabat Abu Bakar bersembunyi di dalam Gua Tsur sebelum melanjutkan perjalanan ke Madinah?",
+            options: ["1 hari 1 malam", "3 hari 3 malam", "7 hari 7 malam", "10 hari"],
+            correctIndex: 1,
+            explanation: "Rasulullah dan Abu Bakar berdiam di dalam Gua Tsur selama 3 hari 3 malam untuk mengelabui pelacak kaum kafir."
+          },
+          {
+            category: "QS At-Tin",
+            question: "Surat At-Tin di dalam Al-Qur'an memiliki arti buah Tin. Surat ini menempati urutan juz ke-30 dengan jumlah ayat sebanyak...",
+            options: ["6 ayat", "8 ayat", "10 ayat", "12 ayat"],
+            correctIndex: 1,
+            explanation: "Surat At-Tin terdiri atas 8 ayat dan termasuk golongan surat Makkiyah."
+          },
+          {
+            category: "QS At-Tin",
+            question: "Pada surat At-Tin ayat 1-3, Allah bersumpah demi tiga hal suci, yaitu buah Tin dan Zaitun, Bukit Sinai, serta...",
+            options: ["Negeri Mesir yang subur", "Kota Makkah yang aman ini (Baladil Amin)", "Kota Madinah yang bercahaya", "Laut Merah yang terbelah"],
+            correctIndex: 1,
+            explanation: "'Baladil Amin' merujuk kepada kota suci Makkah yang memberikan kedamaian dan keamanan."
+          },
+          {
+            category: "Iman kepada Rasul",
+            question: "Iman kepada para utusan Allah (Rasul) merupakan salah satu dari pilar keimanan. Rukun iman ke berapakah iman kepada Rasul?",
+            options: ["Rukun Iman ke-2", "Rukun Iman ke-3", "Rukun Iman ke-4", "Rukun Iman ke-5"],
+            correctIndex: 2,
+            explanation: "Urutan Rukun Iman: 1. Allah, 2. Malaikat, 3. Kitab, 4. Rasul, 5. Hari Kiamat, 6. Qada & Qadar."
+          },
+          {
+            category: "Iman kepada Rasul",
+            question: "Berapakah jumlah nabi dan rasul yang wajib diyakini dan dihafalkan namanya oleh setiap umat muslim?",
+            options: ["10 nabi dan rasul", "25 nabi dan rasul", "99 nabi dan rasul", "313 nabi dan rasul"],
+            correctIndex: 1,
+            explanation: "Meskipun jumlah nabi sangat banyak, umat Islam wajib mengimani 25 nabi dan rasul yang namanya tercantum dalam Al-Qur'an."
+          },
+          {
+            category: "Sifat Rasul",
+            question: "Para Rasul Allah memiliki sifat wajib terjaga dari kesalahan yang mulia. Salah satunya adalah 'Amanah' yang berarti...",
+            options: ["Cerdas dan bijaksana", "Menyampaikan wahyu", "Benar/jujur kata-katanya", "Dapat dipercaya memegang rahasia/tugas"],
+            correctIndex: 3,
+            explanation: "Amanah artinya dapat dipercaya, Shiddiq artinya jujur, Tabligh artinya menyampaikan, dan Fathonah artinya cerdas."
+          }
+        ]
       }
-    ];
+    };
 
-    // STATE MANAGEMENT APLIKASI
+    // STATE MANAGEMENT
+    let activeSubjectKey = null;
+    let questionsList = [];
     let currentQuestionIndex = 0;
     let selectedOptionIndex = null;
-    let userAnswers = Array(questions.length).fill(null);
+    let userAnswers = [];
     let isChecked = false;
     let correctAnswersCount = 0;
 
     // DOM ELEMENTS
+    const menuScreen = document.getElementById('menu-screen');
     const startScreen = document.getElementById('start-screen');
     const quizScreen = document.getElementById('quiz-screen');
     const resultScreen = document.getElementById('result-screen');
@@ -575,23 +1187,49 @@
     const statScore = document.getElementById('stat-score');
     const gradeBadge = document.getElementById('grade-badge');
     const reviewListContainer = document.getElementById('review-list-container');
-
-    // INITIALIZATION
-    totalQuestionsNumText.textContent = questions.length;
+    const resultSubjectTitle = document.getElementById('result-subject-title');
+    const welcomeSubjectTitle = document.getElementById('welcome-subject-title');
+    const subjectWelcomeBadge = document.getElementById('subject-welcome-badge');
+    const quizSubjectLabel = document.getElementById('quiz-subject-label');
 
     // EVENT LISTENERS
     btnStart.addEventListener('click', startQuiz);
     btnCheck.addEventListener('click', checkAnswer);
     btnNext.addEventListener('click', nextQuestion);
-    btnRestart.addEventListener('click', restartQuiz);
+    btnRestart.addEventListener('click', restartCurrentQuiz);
     btnReview.addEventListener('click', showReview);
     btnBackToResult.addEventListener('click', backToResult);
 
-    // FUNCTIONS
+    // SELEKSI MATAPELAJARAN
+    function selectSubject(subjectKey) {
+      activeSubjectKey = subjectKey;
+      const subject = allSubjectsData[subjectKey];
+      
+      // Update welcome screen info
+      welcomeSubjectTitle.textContent = subject.title;
+      subjectWelcomeBadge.textContent = subject.icon;
+      quizSubjectLabel.textContent = subject.title;
+      resultSubjectTitle.textContent = subject.title;
+      
+      questionsList = subject.questions;
+      totalQuestionsNumText.textContent = questionsList.length;
+
+      // Switch screen
+      menuScreen.classList.add('hidden');
+      startScreen.classList.remove('hidden');
+    }
+
+    function backToMenu() {
+      startScreen.classList.add('hidden');
+      resultScreen.classList.add('hidden');
+      quizScreen.classList.add('hidden');
+      menuScreen.classList.remove('hidden');
+    }
+
     function startQuiz() {
       currentQuestionIndex = 0;
       selectedOptionIndex = null;
-      userAnswers.fill(null);
+      userAnswers = Array(questionsList.length).fill(null);
       isChecked = false;
       correctAnswersCount = 0;
       
@@ -607,38 +1245,36 @@
       isChecked = false;
       selectedOptionIndex = null;
       
-      // Reset Tombol & Box Feedback
       btnCheck.classList.remove('hidden');
       btnCheck.disabled = true;
       btnNext.classList.add('hidden');
       feedbackBox.classList.add('hidden');
 
-      const currentQuestion = questions[currentQuestionIndex];
+      const currentQuestion = questionsList[currentQuestionIndex];
       
-      // Update Progress UI
+      // Progress UI
       currentQuestionNumText.textContent = currentQuestionIndex + 1;
-      const progressPercent = ((currentQuestionIndex) / questions.length) * 100;
-      progressBar.style.width = `${progressPercent || 4}%`;
+      const progressPercent = ((currentQuestionIndex) / questionsList.length) * 100;
+      progressBar.style.width = `${progressPercent || 10}%`;
       
-      // Update Live Score (berdasarkan jawaban benar sejauh ini)
-      const calculatedScore = Math.round((correctAnswersCount / questions.length) * 100);
+      // Live Score
+      const calculatedScore = Math.round((correctAnswersCount / questionsList.length) * 100);
       liveScoreText.textContent = calculatedScore;
 
-      // Render Pertanyaan
+      // Render Soal & Kategori
       questionCategory.textContent = currentQuestion.category;
-      questionText.textContent = currentQuestion.question;
+      questionText.innerHTML = currentQuestion.question; // Menggunakan innerHTML agar aman untuk tanda matematika LaTeX sederhana jika ada
 
-      // Render Opsi Jawaban (Desain Dioptimalkan untuk HP)
+      // Render Pilihan Jawaban
       optionsContainer.innerHTML = '';
       currentQuestion.options.forEach((option, idx) => {
         const optionLetter = String.fromCharCode(65 + idx); // A, B, C, D
         
         const button = document.createElement('button');
-        // Memberikan touch-feedback aktif yang responsif di HP
-        button.className = "flex items-start text-left w-full p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 hover:border-slate-200 active:scale-[0.98] active:bg-indigo-50/20 transition-all duration-150 outline-none group";
+        button.className = "flex items-start text-left w-full p-3 rounded-xl border-2 border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 hover:border-slate-200 active:scale-[0.98] active:bg-indigo-50/20 transition-all duration-150 outline-none group";
         button.innerHTML = `
-          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-white border border-slate-200 font-bold text-slate-500 group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors shrink-0 mr-2.5 text-xs sm:text-sm">${optionLetter}</span>
-          <span class="text-slate-700 font-medium pt-0.5 text-xs sm:text-base leading-relaxed break-words w-full">${option}</span>
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-white border border-slate-200 font-bold text-slate-500 group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors shrink-0 mr-2.5 text-xs">${optionLetter}</span>
+          <span class="text-slate-700 font-medium pt-0.5 text-xs sm:text-sm leading-relaxed break-words w-full">${option}</span>
         `;
         
         button.addEventListener('click', () => selectOption(idx, button));
@@ -647,12 +1283,11 @@
     }
 
     function selectOption(index, buttonElement) {
-      if (isChecked) return; // Kunci pilihan jika sudah dicek
+      if (isChecked) return;
 
       selectedOptionIndex = index;
       userAnswers[currentQuestionIndex] = index;
       
-      // Reset semua style opsi ke awal
       Array.from(optionsContainer.children).forEach((btn) => {
         btn.classList.remove('border-indigo-500', 'bg-indigo-50/50');
         const badge = btn.querySelector('span');
@@ -660,7 +1295,6 @@
         badge.classList.add('bg-white', 'text-slate-500', 'border-slate-200');
       });
 
-      // Beri style aktif pada opsi terpilih
       buttonElement.classList.add('border-indigo-500', 'bg-indigo-50/50');
       const badge = buttonElement.querySelector('span');
       badge.classList.remove('bg-white', 'text-slate-500', 'border-slate-200');
@@ -676,32 +1310,29 @@
       btnCheck.classList.add('hidden');
       btnNext.classList.remove('hidden');
 
-      const currentQuestion = questions[currentQuestionIndex];
+      const currentQuestion = questionsList[currentQuestionIndex];
       const isCorrect = (selectedOptionIndex === currentQuestion.correctIndex);
 
       if (isCorrect) {
         correctAnswersCount++;
       }
 
-      // Update Live Score setelah dijawab
-      const calculatedScore = Math.round((correctAnswersCount / questions.length) * 100);
+      const calculatedScore = Math.round((correctAnswersCount / questionsList.length) * 100);
       liveScoreText.textContent = calculatedScore;
 
-      // Menampilkan visualisasi pada pilihan jawaban (hijau untuk benar, merah jika salah)
+      // Warnai Jawaban
       Array.from(optionsContainer.children).forEach((btn, idx) => {
         const badge = btn.querySelector('span');
         if (idx === currentQuestion.correctIndex) {
-          // Jawaban Benar
           btn.classList.add('border-emerald-500', 'bg-emerald-50/50');
           badge.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
         } else if (idx === selectedOptionIndex && !isCorrect) {
-          // Jawaban Salah yang dipilih siswa
           btn.classList.add('border-rose-400', 'bg-rose-50/50');
           badge.classList.add('bg-rose-500', 'text-white', 'border-rose-500');
         }
       });
 
-      // Tampilkan Box Feedback
+      // Show Feedback Box
       feedbackBox.classList.remove('hidden');
       if (isCorrect) {
         feedbackBox.className = "rounded-xl p-4 border border-emerald-200 bg-emerald-50 text-emerald-950 mt-3 transition-all duration-300";
@@ -712,7 +1343,7 @@
           </svg>
         `;
         feedbackTitle.textContent = "Selamat anda benar! 🎉";
-        feedbackDesc.innerHTML = `<strong>Kunci Jawaban:</strong> Opsi ${String.fromCharCode(65 + currentQuestion.correctIndex)} <br><span class="mt-1 block text-xs sm:text-sm">${currentQuestion.explanation}</span>`;
+        feedbackDesc.innerHTML = `<strong>Kunci Jawaban:</strong> Opsi ${String.fromCharCode(65 + currentQuestion.correctIndex)} <br><span class="mt-1 block text-xs">${currentQuestion.explanation}</span>`;
       } else {
         feedbackBox.className = "rounded-xl p-4 border border-rose-200 bg-rose-50/70 text-rose-950 mt-3 transition-all duration-300";
         feedbackIcon.className = "w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0 bg-rose-500";
@@ -722,10 +1353,10 @@
           </svg>
         `;
         feedbackTitle.textContent = "Anda keliru. 😔";
-        feedbackDesc.innerHTML = `<strong>Kunci Jawaban:</strong> Opsi ${String.fromCharCode(65 + currentQuestion.correctIndex)} (${currentQuestion.options[currentQuestion.correctIndex]})<br><span class="mt-1 block text-xs sm:text-sm"><strong>Penjelasan:</strong> ${currentQuestion.explanation}</span>`;
+        feedbackDesc.innerHTML = `<strong>Kunci Jawaban:</strong> Opsi ${String.fromCharCode(65 + currentQuestion.correctIndex)} (${currentQuestion.options[currentQuestion.correctIndex]})<br><span class="mt-1 block text-xs"><strong>Penjelasan:</strong> ${currentQuestion.explanation}</span>`;
       }
 
-      // Otomatis scroll perlahan ke box feedback di ponsel agar terbaca jelas
+      // Smooth scroll ke feedback
       setTimeout(() => {
         feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 100);
@@ -733,7 +1364,7 @@
 
     function nextQuestion() {
       currentQuestionIndex++;
-      if (currentQuestionIndex < questions.length) {
+      if (currentQuestionIndex < questionsList.length) {
         loadQuestion();
       } else {
         showResults();
@@ -744,30 +1375,26 @@
       quizScreen.classList.add('hidden');
       resultScreen.classList.remove('hidden');
 
-      const finalScore = Math.round((correctAnswersCount / questions.length) * 100);
-      const wrongCount = questions.length - correctAnswersCount;
+      const finalScore = Math.round((correctAnswersCount / questionsList.length) * 100);
+      const wrongCount = questionsList.length - correctAnswersCount;
 
       statCorrect.textContent = correctAnswersCount;
       statWrong.textContent = wrongCount;
       statScore.textContent = finalScore;
 
-      // Penentuan Kategori Grade & Styling Warna
-      if (finalScore >= 85) {
+      if (finalScore >= 80) {
         gradeBadge.textContent = "Sangat Memuaskan! 🏆";
-        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm bg-emerald-100 text-emerald-800 border border-emerald-200";
-      } else if (finalScore >= 70) {
+        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs font-bold shadow-sm bg-emerald-100 text-emerald-800 border border-emerald-200";
+      } else if (finalScore >= 60) {
         gradeBadge.textContent = "Bagus Sekali! 👍";
-        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm bg-indigo-100 text-indigo-800 border border-indigo-200";
-      } else if (finalScore >= 50) {
-        gradeBadge.textContent = "Cukup, Ayo Belajar Lagi! 📖";
-        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm bg-amber-100 text-amber-800 border border-amber-200";
+        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs font-bold shadow-sm bg-indigo-100 text-indigo-800 border border-indigo-200";
       } else {
-        gradeBadge.textContent = "Butuh Banyak Latihan! 💪";
-        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm bg-rose-100 text-rose-800 border border-rose-200";
+        gradeBadge.textContent = "Butuh Belajar Lagi! 💪";
+        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs font-bold shadow-sm bg-rose-100 text-rose-800 border border-rose-200";
       }
     }
 
-    function restartQuiz() {
+    function restartCurrentQuiz() {
       startQuiz();
     }
 
@@ -776,7 +1403,7 @@
       reviewScreen.classList.remove('hidden');
       
       reviewListContainer.innerHTML = '';
-      questions.forEach((q, idx) => {
+      questionsList.forEach((q, idx) => {
         const uAnsIdx = userAnswers[idx];
         const isUserCorrect = (uAnsIdx === q.correctIndex);
         
