@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ujian Sumatif Akhir Semester Genap - PKN Kelas IV</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts (Fredoka & Quicksand untuk nuansa ramah anak) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      /* Mencegah highlight biru saat elemen disentuh di HP */
+      -webkit-tap-highlight-color: transparent;
+    }
+    h1, h2, h3, h4, .font-title {
+      font-family: 'Fredoka', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-teal-50 to-emerald-50 min-h-screen text-slate-800 antialiased selection:bg-indigo-100">
+
+  <div class="max-w-xl mx-auto px-3 py-4 sm:py-8">
+    <!-- HEADER UTAMA (Dibuat lebih ringkas di HP) -->
+    <header class="text-center mb-5 sm:mb-8">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white shadow-sm border border-emerald-100 text-emerald-600 font-semibold text-xs mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+        SD IT AINUL MARDHIAH
+      </div>
+      <h1 class="text-xl sm:text-3xl font-bold text-slate-800 tracking-tight leading-snug">SUMATIF AKHIR SEMESTER</h1>
+      <p class="text-xs sm:text-base text-slate-500 mt-0.5">PKN Kelas IV SD &bull; Semester Genap</p>
+    </header>
+
+    <!-- CONTAINER UTAMA -->
+    <main class="bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-slate-100 p-4 sm:p-8 transition-all duration-300">
+      
+      <!-- Halaman Selamat Datang / Mulai -->
+      <div id="start-screen" class="space-y-5 text-center py-4">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto text-indigo-600 animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div class="space-y-1">
+          <h2 class="text-xl sm:text-2xl font-bold text-indigo-950">Siap untuk Memulai?</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Ujian Sumatif Mandiri Mata Pelajaran Pancasila & Kewarganegaraan</p>
+        </div>
+        
+        <div class="text-slate-600 space-y-2 bg-indigo-50/50 p-4 rounded-xl text-left text-xs sm:text-sm border border-indigo-100/45">
+          <p class="font-bold text-indigo-900">Petunjuk Ujian:</p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li>Terdiri dari <strong class="text-indigo-900">25 soal pilihan ganda</strong>.</li>
+            <li>Sesuai dengan kisi-kisi Kurikulum Merdeka.</li>
+            <li>Klik pilihan jawaban, lalu ketuk tombol <strong class="text-indigo-900">"Cek Jawaban"</strong>.</li>
+            <li>Jika salah, kunci jawaban dan penjelasan lengkap akan otomatis terbuka.</li>
+          </ul>
+        </div>
+        
+        <button id="btn-start" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg active:scale-95 transition-all">
+          Mulai Ujian Sekarang
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Halaman Pertanyaan / Kuis -->
+      <div id="quiz-screen" class="hidden space-y-4">
+        <!-- Progress Bar & Indikator Soal -->
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <div>
+            <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Kemajuan</span>
+            <h3 class="text-sm sm:text-base font-bold text-indigo-950">Soal <span id="current-question-num">1</span> dari <span id="total-questions-num">25</span></h3>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Nilai Sementara</span>
+            <div class="text-sm sm:text-base font-bold text-emerald-600"><span id="live-score">0</span>%</div>
+          </div>
+        </div>
+        
+        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-indigo-500 to-teal-500 h-full transition-all duration-300" style="width: 4%"></div>
+        </div>
+
+        <!-- Teks Pertanyaan -->
+        <div class="bg-slate-50 border border-slate-100 p-4 rounded-xl">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 mb-1.5 inline-block" id="question-category">Kategori</span>
+          <p id="question-text" class="text-sm sm:text-base font-bold text-slate-800 leading-relaxed">Loading...</p>
+        </div>
+
+        <!-- Pilihan Jawaban (Disesuaikan untuk sentuhan HP yang nyaman) -->
+        <div id="options-container" class="grid grid-cols-1 gap-2">
+          <!-- Tombol Pilihan Jawaban dinamis dari JS -->
+        </div>
+
+        <!-- Tombol Aksi Kuis -->
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 pt-2">
+          <div class="text-[11px] text-slate-400 font-medium text-center sm:text-left order-2 sm:order-1">
+            *Pilih satu jawaban terbaik.
+          </div>
+          <div class="flex order-1 sm:order-2 w-full sm:w-auto">
+            <button id="btn-check" disabled class="w-full sm:w-auto bg-indigo-600 text-white text-sm font-bold px-6 py-3 rounded-xl shadow-md disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none hover:bg-indigo-700 active:scale-95 transition-all">
+              Cek Jawaban
+            </button>
+            <button id="btn-next" class="hidden w-full sm:w-auto bg-emerald-600 text-white text-sm font-bold px-6 py-3 rounded-xl shadow-md hover:bg-emerald-700 active:scale-95 transition-all items-center justify-center gap-1">
+              Soal Selanjutnya
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Kotak Feedback Penjelasan / Hasil Cek (Scrollable di HP jika teks panjang) -->
+        <div id="feedback-box" class="hidden rounded-xl p-4 border transition-all duration-300">
+          <div class="flex items-start gap-2.5">
+            <div id="feedback-icon" class="w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0 mt-0.5">
+              <!-- Icon Centang / Silang dinamis -->
+            </div>
+            <div class="space-y-0.5">
+              <h4 id="feedback-title" class="text-sm sm:text-base font-bold">Judul</h4>
+              <p id="feedback-desc" class="text-xs sm:text-sm leading-relaxed text-slate-700">Penjelasan disini.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Halaman Hasil / Skor Akhir -->
+      <div id="result-screen" class="hidden text-center space-y-5 py-4">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto text-amber-500 shadow-inner">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4l-1 9H9l-1-9h4z" />
+          </svg>
+        </div>
+        <div class="space-y-1">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-800">Evaluasi Hasil Belajar</h2>
+          <p class="text-xs sm:text-sm text-slate-400 px-4">Kamu telah menyelesaikan seluruh rangkaian ujian PKN Kelas IV.</p>
+        </div>
+
+        <!-- Papan Skor (Dibuat responsif & cantik di HP) -->
+        <div class="grid grid-cols-3 gap-2.5 max-w-sm mx-auto bg-slate-50 p-3 rounded-xl border border-slate-100">
+          <div class="p-2 sm:p-3 bg-white rounded-lg shadow-sm">
+            <span class="text-[9px] sm:text-xs text-slate-400 font-bold uppercase">Benar</span>
+            <div class="text-lg sm:text-2xl font-bold text-emerald-600 mt-0.5" id="stat-correct">0</div>
+          </div>
+          <div class="p-2 sm:p-3 bg-white rounded-lg shadow-sm">
+            <span class="text-[9px] sm:text-xs text-slate-400 font-bold uppercase">Salah</span>
+            <div class="text-lg sm:text-2xl font-bold text-rose-500 mt-0.5" id="stat-wrong">0</div>
+          </div>
+          <div class="p-2 sm:p-3 bg-white rounded-lg shadow-sm">
+            <span class="text-[9px] sm:text-xs text-slate-400 font-bold uppercase">Skor</span>
+            <div class="text-lg sm:text-2xl font-bold text-indigo-600 mt-0.5" id="stat-score">0</div>
+          </div>
+        </div>
+
+        <!-- Grade Keterangan -->
+        <div id="grade-badge" class="inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm">
+          Kategori Nilai
+        </div>
+
+        <!-- Tombol Akhir (Dibuat vertikal penuh di HP agar jempol mudah menjangkau) -->
+        <div class="flex flex-col gap-2 max-w-sm mx-auto pt-3">
+          <button id="btn-restart" class="w-full inline-flex items-center justify-center gap-1.5 bg-indigo-600 text-white font-bold text-sm px-5 py-3 rounded-xl shadow hover:bg-indigo-700 active:scale-95 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 15H19" />
+            </svg>
+            Ulangi Ujian
+          </button>
+          <button id="btn-review" class="w-full inline-flex items-center justify-center gap-1.5 bg-slate-100 text-slate-700 font-bold text-sm px-5 py-3 rounded-xl hover:bg-slate-200 active:scale-95 transition-all border border-slate-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            Tinjau Pembahasan Soal
+          </button>
+        </div>
+      </div>
+
+      <!-- Halaman Tinjau Pembahasan / Review (Sangat nyaman di-scroll di HP) -->
+      <div id="review-screen" class="hidden space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+          <h2 class="text-base sm:text-lg font-bold text-slate-800">Pembahasan Soal</h2>
+          <button id="btn-back-to-result" class="text-xs font-bold text-indigo-600 hover:underline">Kembali</button>
+        </div>
+        <div id="review-list-container" class="space-y-4 max-h-[60vh] overflow-y-auto pr-1">
+          <!-- Daftar dinamis tinjauan soal -->
+        </div>
+      </div>
+
+    </main>
+    
+    <!-- FOOTER -->
+    <footer class="text-center mt-6 text-[10px] text-slate-400">
+      <p>&copy; 2026 SD IT Ainul Mardhiah. Dirancang untuk semua jenis ponsel.</p>
+    </footer>
+  </div>
+
+  <script>
+    // DATA PERTANYAAN SESUAI KISI-KISI
+    const questions = [
+      // --- MATERI 1: Keberagaman Sosial, Gotong Royong, Persatuan dan Kesatuan ---
+      {
+        id: 1,
+        category: "Keberagaman Sosial",
+        question: "Di kelas IVB SD IT Ainul Mardhiah terdapat siswa dari berbagai macam suku bangsa, seperti suku Aceh, Gayo, Minang, dan Jawa. Sikap terbaik yang harus ditunjukkan oleh semua siswa dalam keberagaman sosial ini adalah...",
+        options: [
+          "Hanya mau berteman dengan teman yang berasal dari suku yang sama.",
+          "Saling menghargai, menghormati, dan berteman dengan siapa saja tanpa membedakan suku.",
+          "Meminta teman yang berbeda suku untuk mengubah adat istiadatnya.",
+          "Membatasi pergaulan agar tidak terjadi kesalahpahaman budaya."
+        ],
+        correctIndex: 1,
+        explanation: "Saling menghargai dan berteman tanpa membeda-bedakan suku (toleransi) adalah kunci terwujudnya keharmonisan di tengah keberagaman sosial masyarakat Indonesia."
+      },
+      {
+        id: 2,
+        category: "Gotong Royong",
+        question: "Kerja bakti membersihkan lingkungan sekolah secara sukarela demi kepentingan bersama merupakan wujud nyata dari pengamalan nilai...",
+        options: [
+          "Individualisme",
+          "Gotong royong",
+          "Kemandirian",
+          "Persaingan sehat"
+        ],
+        correctIndex: 1,
+        explanation: "Gotong royong didefinisikan sebagai kegiatan bekerja bersama-sama secara sukarela untuk kepentingan bersama agar pekerjaan terasa lebih ringan dan cepat selesai."
+      },
+      {
+        id: 3,
+        category: "Persatuan dan Kesatuan",
+        question: "Manakah di bawah ini yang merupakan contoh tindakan yang mencerminkan sikap persatuan dan kesatuan di lingkungan sekolah?",
+        options: [
+          "Bekerja sama dalam mengerjakan ujian tertulis di kelas.",
+          "Membantu teman satu geng saja saat mereka mengalami kesulitan.",
+          "Melaksanakan piket kelas bersama-sama sesuai dengan jadwal yang telah ditentukan.",
+          "Mengutamakan kepentingan pribadi di atas piket bersama."
+        ],
+        correctIndex: 2,
+        explanation: "Piket kelas bersama-sama secara adil dan kompak menunjukkan rasa persatuan dan kesatuan di sekolah demi terciptanya kebersihan ruang belajar."
+      },
+      {
+        id: 4,
+        category: "Gotong Royong",
+        question: "Secara bahasa, kata gotong royong memiliki arti yang sangat mendalam. Arti dari istilah 'gotong' adalah...",
+        options: [
+          "Bekerja bersama-sama",
+          "Memikul atau mengangkat secara bersama",
+          "Kewajiban sosial masyarakat",
+          "Saling membantu keuangan"
+        ],
+        correctIndex: 1,
+        explanation: "Istilah 'gotong' memiliki arti memikul atau mengangkat beban, sedangkan 'royong' berarti bersama-sama. Jadi, gotong royong adalah memikul beban kehidupan bersama-sama."
+      },
+      {
+        id: 5,
+        category: "Gotong Royong",
+        question: "Kegiatan gotong royong memiliki banyak sekali manfaat bagi kehidupan bermasyarakat. Di bawah ini yang merupakan manfaat gotong royong adalah...",
+        options: [
+          "Menimbulkan rasa persaingan ketat antar tetangga.",
+          "Mempererat tali persaudaraan dan menciptakan rasa kebersamaan.",
+          "Membuat pekerjaan kelompok menjadi berjalan sangat lama.",
+          "Memperoleh upah harian yang besar dari rukun tetangga."
+        ],
+        correctIndex: 1,
+        explanation: "Manfaat utama gotong royong adalah mempererat tali persaudaraan, meringankan beban pekerjaan, menghemat waktu, dan menumbuhkan kerukunan hidup."
+      },
+      {
+        id: 6,
+        category: "Persatuan dan Kesatuan",
+        question: "Aisyah selalu membantu ibunya mencuci piring setelah makan, sedangkan adiknya bertugas menyapu lantai ruang makan. Sikap kompak dan bersatu di rumah ini akan berdampak pada...",
+        options: [
+          "Pekerjaan rumah tangga menumpuk dan tidak pernah selesai.",
+          "Suasana rumah menjadi harmonis, damai, dan pekerjaan rumah cepat selesai.",
+          "Terjadinya pertengkaran antara kakak dan adik setiap hari.",
+          "Ibu menjadi semakin lelah karena mengawasi anak-anak bekerja."
+        ],
+        correctIndex: 1,
+        explanation: "Sikap bersatu, kompak, dan membagi tugas dengan adil di rumah menciptakan keharmonisan keluarga serta meredakan beban pekerjaan orang tua."
+      },
+      {
+        id: 7,
+        category: "Keberagaman Sosial",
+        question: "Keberagaman sosial budaya bangsa Indonesia merupakan kekayaan yang tak ternilai harganya. Cara memandang keberagaman budaya ini yang paling tepat adalah...",
+        options: [
+          "Sebagai kekayaan bangsa yang harus dilestarikan dan disyukuri.",
+          "Sebagai kelemahan bangsa yang memicu konflik perpecahan.",
+          "Sebagai hal biasa yang tidak perlu diperhatikan perkembangannya.",
+          "Sebagai penghambat kemajuan pembangunan nasional negara modern."
+        ],
+        correctIndex: 0,
+        explanation: "Keberagaman sosial budaya di Indonesia adalah anugerah Tuhan Yang Maha Esa dan merupakan kekayaan identitas bangsa yang wajib kita lestarikan."
+      },
+      {
+        id: 8,
+        category: "Gotong Royong",
+        question: "Salah satu contoh bentuk gotong royong dalam menjaga keamanan lingkungan perumahan di malam hari adalah...",
+        options: [
+          "Melaksanakan ronda malam secara bergiliran (Poskamling).",
+          "Menyewa penjaga keamanan tanpa keterlibatan warga.",
+          "Mengunci pintu rumah masing-masing dengan rapat.",
+          "Membiarkan halaman rumah diterangi lampu jalan saja."
+        ],
+        correctIndex: 0,
+        explanation: "Ronda malam atau siskamling merupakan bentuk gotong royong dalam bidang pertahanan dan keamanan lingkungan oleh warga secara bersama-sama."
+      },
+      {
+        id: 9,
+        category: "Persatuan dan Kesatuan",
+        question: "Sikap negatif yang harus dihindari karena dapat merusak rasa persatuan dan kesatuan bangsa Indonesia adalah...",
+        options: [
+          "Toleransi",
+          "Egois (mementingkan diri sendiri)",
+          "Rendah hati",
+          "Saling menghargai"
+        ],
+        correctIndex: 1,
+        explanation: "Sikap egois atau mementingkan diri sendiri dan kelompoknya di atas kepentingan bersama dapat memicu perpecahan serta merusak persatuan."
+      },
+      {
+        id: 10,
+        category: "Gotong Royong",
+        question: "Gotong royong merupakan kepribadian asli bangsa Indonesia yang diwariskan turun-temurun. Nilai dasar yang paling menonjol dalam gotong royong adalah...",
+        options: [
+          "Imbalan materi",
+          "Kekeluargaan dan sukarela",
+          "Kekerasan fisik",
+          "Kepentingan politik"
+        ],
+        correctIndex: 1,
+        explanation: "Semangat kekeluargaan, kebersamaan, serta rasa sukarela (tanpa mengharap imbalan) merupakan nilai moral yang mendasari budaya gotong royong."
+      },
+
+      // --- MATERI 2: Pancasila, Sikap sesuai Sila, Nilai Kepahlawanan ---
+      {
+        id: 11,
+        category: "Nilai Pancasila",
+        question: "Menghormati teman yang sedang menjalankan ibadah puasa dan tidak makan dengan sengaja di depannya merupakan bentuk pengamalan sila Pancasila yang berlambang...",
+        options: [
+          "Bintang emas (Sila ke-1)",
+          "Rantai emas (Sila ke-2)",
+          "Pohon beringin (Sila ke-3)",
+          "Kepala banteng (Sila ke-4)"
+        ],
+        correctIndex: 0,
+        explanation: "Saling menghormati antarumat beragama adalah bentuk pengamalan Sila ke-1 (Ketuhanan Yang Maha Esa) yang berlambangkan Bintang Emas."
+      },
+      {
+        id: 12,
+        category: "Nilai Pancasila",
+        question: "Ketika melihat berita bencana gempa bumi, para siswa kelas IV mengumpulkan pakaian layak pakai dan uang saku untuk disumbangkan kepada para korban. Sikap ini sesuai dengan sila Pancasila yang berbunyi...",
+        options: [
+          "Ketuhanan Yang Maha Esa",
+          "Kemanusiaan yang adil dan beradab",
+          "Persatuan Indonesia",
+          "Keadilan sosial bagi seluruh rakyat Indonesia"
+        ],
+        correctIndex: 1,
+        explanation: "Aksi kemanusiaan, empati, dan tolong-menolong kepada korban bencana merupakan wujud pengamalan Sila ke-2 (Kemanusiaan yang adil dan beradab)."
+      },
+      {
+        id: 13,
+        category: "Nilai Pancasila",
+        question: "Mencintai produk dalam negeri, bangga menggunakan batik, serta mengutamakan membeli barang buatan perajin lokal merupakan pengamalan Pancasila sila ketiga, yaitu...",
+        options: [
+          "Ketuhanan Yang Maha Esa",
+          "Kemanusiaan yang adil dan beradab",
+          "Persatuan Indonesia",
+          "Keadilan sosial bagi seluruh rakyat Indonesia"
+        ],
+        correctIndex: 2,
+        explanation: "Cinta tanah air dan bangga menggunakan produk dalam negeri adalah cerminan rasa nasionalisme yang terkandung pada Sila ke-3 (Persatuan Indonesia)."
+      },
+      {
+        id: 14,
+        category: "Nilai Pancasila",
+        question: "Saat pembagian tugas kelompok di kelas, terjadi perbedaan pendapat antara Andi dan Budi. Mereka kemudian duduk bersama untuk mendiskusikan masalah tersebut hingga mencapai keputusan bersama yang disepakati. Kegiatan ini mencerminkan sila keempat Pancasila, yaitu...",
+        options: [
+          "Menghargai hasil karya orang lain.",
+          "Mengutamakan musyawarah untuk mencapai mufakat.",
+          "Membantu orang lain secara adil tanpa tebang pilih.",
+          "Berani membela kebenaran dan keadilan."
+        ],
+        correctIndex: 1,
+        explanation: "Sila ke-4 mengamanatkan pentingnya musyawarah untuk mufakat dalam menyelesaikan masalah bersama tanpa memaksakan kehendak."
+      },
+      {
+        id: 15,
+        category: "Nilai Pancasila",
+        question: "Setiap warga negara Indonesia memiliki hak dan kewajiban yang sama di mata hukum. Kita harus memperlakukan semua orang dengan adil dan menghargai hak-hak mereka. Sikap tersebut mencerminkan sila Pancasila yang berlambangkan...",
+        options: [
+          "Rantai",
+          "Pohon Beringin",
+          "Padi dan Kapas",
+          "Kepala Banteng"
+        ],
+        correctIndex: 2,
+        explanation: "Padi dan kapas adalah lambang Sila ke-5 (Keadilan sosial bagi seluruh rakyat Indonesia) yang menuntut keadilan, keseimbangan hak, dan kewajiban."
+      },
+      {
+        id: 16,
+        category: "Nilai Kepahlawanan",
+        question: "Seorang pahlawan berjuang tanpa pamrih mengorbankan waktu, tenaga, bahkan nyawanya demi kemerdekaan bangsa Indonesia. Sikap teladan pahlawan yang mengutamakan kepentingan bangsa di atas kepentingan pribadi disebut...",
+        options: [
+          "Egois",
+          "Rela berkorban (Patriotisme)",
+          "Sombong",
+          "Individualis"
+        ],
+        correctIndex: 1,
+        explanation: "Rela berkorban demi nusa dan bangsa (Patriotisme) merupakan nilai keteladanan luhur para pahlawan pejuang kemerdekaan yang patut kita contoh."
+      },
+      {
+        id: 17,
+        category: "Nilai Kepahlawanan",
+        question: "Sebagai siswa kelas IV SD, cara paling tepat yang dapat kita lakukan untuk menghargai dan melanjutkan perjuangan jasa para pahlawan bangsa adalah...",
+        options: [
+          "Ikut berperang menggunakan senjata tajam melawan musuh.",
+          "Belajar dengan tekun dan disiplin untuk membangun masa depan bangsa.",
+          "Membuat coretan-coretan di monumen bersejarah agar terkenal.",
+          "Menonton film perjuangan saja tanpa perlu belajar keras."
+        ],
+        correctIndex: 1,
+        explanation: "Bagi pelajar, bentuk menghargai jasa pahlawan yang paling nyata dan relevan adalah dengan belajar sungguh-sungguh serta berprestasi."
+      },
+      {
+        id: 18,
+        category: "Nilai Pancasila",
+        question: "Sikap berani mengakui kesalahan diri sendiri dan meminta maaf secara jantan merupakan cerminan pengamalan sila Pancasila yang didasari nilai kepahlawanan...",
+        options: [
+          "Kejujuran dan ksatria",
+          "Keberanian membela kejahatan",
+          "Sikap tak mau kalah",
+          "Kepasrahan tanpa usaha"
+        ],
+        correctIndex: 0,
+        explanation: "Berani jujur mengakui kesalahan dan berjiwa ksatria untuk meminta maaf adalah akhlak terpuji yang mencerminkan keteladanan pahlawan."
+      },
+      {
+        id: 19,
+        category: "Nilai Kepahlawanan",
+        question: "Para pahlawan bangsa memegang teguh persatuan untuk mengusir penjajah. Semboyan terkenal yang membakar semangat persatuan mereka adalah...",
+        options: [
+          "Beda itu biasa, sama itu luar biasa.",
+          "Bersatu kita teguh, bercerai kita runtuh.",
+          "Utamakan diri sendiri baru menolong sesama.",
+          "Pantang pulang sebelum membawa hadiah kekayaan."
+        ],
+        correctIndex: 1,
+        explanation: "'Bersatu kita teguh, bercerai kita runtuh' adalah semboyan yang menekankan betapa pentingnya kesatuan kekuatan dalam meraih kemerdekaan."
+      },
+      {
+        id: 20,
+        category: "Nilai Pancasila",
+        question: "Tidak membeda-bedakan teman berdasarkan status sosial, kaya atau miskin, dalam pergaulan sehari-hari di sekolah adalah perilaku yang mencerminkan...",
+        options: [
+          "Keadilan sosial (Sila ke-5)",
+          "Keraguan berteman",
+          "Sifat acuh tak acuh",
+          "Pembedaan ras"
+        ],
+        correctIndex: 0,
+        explanation: "Menghormati hak teman tanpa memandang latar belakang ekonomi/sosial merupakan perwujudan keadilan sosial bagi seluruh rakyat Indonesia."
+      },
+
+      // --- MATERI 3: Perumusan Pancasila & BPUPKI ---
+      {
+        id: 21,
+        category: "Perumusan Pancasila",
+        question: "Hari Lahir Pancasila diperingati secara nasional oleh seluruh rakyat Indonesia pada tanggal...",
+        options: [
+          "1 Juni",
+          "17 Agustus",
+          "1 Oktober",
+          "20 Mei"
+        ],
+        correctIndex: 0,
+        explanation: "Hari Lahir Pancasila diperingati setiap tanggal 1 Juni, merujuk pada momen pidato Ir. Soekarno dalam sidang BPUPKI tanggal 1 Juni 1945."
+      },
+      {
+        id: 22,
+        category: "Perumusan Pancasila",
+        question: "Pancasila dirumuskan melalui badan bentukan Jepang yang bertugas menyelidiki persiapan kemerdekaan Indonesia. Kepanjangan dari BPUPKI adalah...",
+        options: [
+          "Badan Pembuat Undang-Undang Persiapan Kemerdekaan Indonesia",
+          "Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia",
+          "Badan Persatuan Umum Pemuda Kemerdekaan Indonesia",
+          "Badan Penasihat Urusan Politik Kemerdekaan Indonesia"
+        ],
+        correctIndex: 1,
+        explanation: "BPUPKI merupakan singkatan dari Badan Penyelidik Usaha-usaha Persiapan Kemerdekaan Indonesia (dalam bahasa Jepang disebut Dokuritsu Junbi Cosakai)."
+      },
+      {
+        id: 23,
+        category: "Perumusan Pancasila",
+        question: "BPUPKI dibentuk pada tanggal 1 Maret 1945. Tokoh nasional terhormat yang ditunjuk dan dipercaya menjabat sebagai ketua BPUPKI adalah...",
+        options: [
+          "Ir. Soekarno",
+          "Drs. Mohammad Hatta",
+          "Dr. K.R.T. Radjiman Wedyodiningrat",
+          "Mr. Muhammad Yamin"
+        ],
+        correctIndex: 2,
+        explanation: "Ketua BPUPKI adalah Dr. K.R.T. Radjiman Wedyodiningrat, didampingi dua wakil ketua yaitu Ichibangase Yosio (Jepang) dan R.P. Soeroso."
+      },
+      {
+        id: 24,
+        category: "Perumusan Pancasila",
+        question: "Dalam sidang pertama BPUPKI, terdapat tiga tokoh utama perumus dasar negara Indonesia. Ketiga tokoh nasional tersebut adalah...",
+        options: [
+          "Ir. Soekarno, Drs. Mohammad Hatta, dan Ki Hajar Dewantara",
+          "Mr. Muhammad Yamin, Dr. Soepomo, dan Ir. Soekarno",
+          "KH. Wahid Hasyim, Dr. Radjiman, dan Mr. Ahmad Soebardjo",
+          "Drs. Mohammad Hatta, Ki Bagus Hadikusumo, dan Sutan Syahrir"
+        ],
+        correctIndex: 1,
+        explanation: "Tiga tokoh perumus usulan dasar negara dalam sidang BPUPKI adalah Mr. Muhammad Yamin (29 Mei 1945), Dr. Soepomo (31 Mei 1945), dan Ir. Soekarno (1 Juni 1945)."
+      },
+      {
+        id: 25,
+        category: "Perumusan Pancasila",
+        question: "Pada tanggal 1 Juni 1945, Ir. Soekarno menyampaikan usulan dasar negara yang beliau beri nama Pancasila. Di bawah ini yang merupakan salah satu asas dalam usulan Ir. Soekarno adalah...",
+        options: [
+          "Peri Kebangsaan",
+          "Persatuan",
+          "Kebangsaan Indonesia (Nasionalisme)",
+          "Peri Ketuhanan"
+        ],
+        correctIndex: 2,
+        explanation: "Lima asas usulan Ir. Soekarno: 1. Kebangsaan Indonesia, 2. Internasionalisme atau Peri-kemanusiaan, 3. Mufakat atau Demokrasi, 4. Kesejahteraan Sosial, 5. Ketuhanan yang berkebudayaan."
+      }
+    ];
+
+    // STATE MANAGEMENT APLIKASI
+    let currentQuestionIndex = 0;
+    let selectedOptionIndex = null;
+    let userAnswers = Array(questions.length).fill(null);
+    let isChecked = false;
+    let correctAnswersCount = 0;
+
+    // DOM ELEMENTS
+    const startScreen = document.getElementById('start-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const resultScreen = document.getElementById('result-screen');
+    const reviewScreen = document.getElementById('review-screen');
+
+    const btnStart = document.getElementById('btn-start');
+    const btnCheck = document.getElementById('btn-check');
+    const btnNext = document.getElementById('btn-next');
+    const btnRestart = document.getElementById('btn-restart');
+    const btnReview = document.getElementById('btn-review');
+    const btnBackToResult = document.getElementById('btn-back-to-result');
+
+    const currentQuestionNumText = document.getElementById('current-question-num');
+    const totalQuestionsNumText = document.getElementById('total-questions-num');
+    const liveScoreText = document.getElementById('live-score');
+    const progressBar = document.getElementById('progress-bar');
+    
+    const questionCategory = document.getElementById('question-category');
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+
+    const feedbackBox = document.getElementById('feedback-box');
+    const feedbackIcon = document.getElementById('feedback-icon');
+    const feedbackTitle = document.getElementById('feedback-title');
+    const feedbackDesc = document.getElementById('feedback-desc');
+
+    const statCorrect = document.getElementById('stat-correct');
+    const statWrong = document.getElementById('stat-wrong');
+    const statScore = document.getElementById('stat-score');
+    const gradeBadge = document.getElementById('grade-badge');
+    const reviewListContainer = document.getElementById('review-list-container');
+
+    // INITIALIZATION
+    totalQuestionsNumText.textContent = questions.length;
+
+    // EVENT LISTENERS
+    btnStart.addEventListener('click', startQuiz);
+    btnCheck.addEventListener('click', checkAnswer);
+    btnNext.addEventListener('click', nextQuestion);
+    btnRestart.addEventListener('click', restartQuiz);
+    btnReview.addEventListener('click', showReview);
+    btnBackToResult.addEventListener('click', backToResult);
+
+    // FUNCTIONS
+    function startQuiz() {
+      currentQuestionIndex = 0;
+      selectedOptionIndex = null;
+      userAnswers.fill(null);
+      isChecked = false;
+      correctAnswersCount = 0;
+      
+      startScreen.classList.add('hidden');
+      resultScreen.classList.add('hidden');
+      reviewScreen.classList.add('hidden');
+      quizScreen.classList.remove('hidden');
+
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      isChecked = false;
+      selectedOptionIndex = null;
+      
+      // Reset Tombol & Box Feedback
+      btnCheck.classList.remove('hidden');
+      btnCheck.disabled = true;
+      btnNext.classList.add('hidden');
+      feedbackBox.classList.add('hidden');
+
+      const currentQuestion = questions[currentQuestionIndex];
+      
+      // Update Progress UI
+      currentQuestionNumText.textContent = currentQuestionIndex + 1;
+      const progressPercent = ((currentQuestionIndex) / questions.length) * 100;
+      progressBar.style.width = `${progressPercent || 4}%`;
+      
+      // Update Live Score (berdasarkan jawaban benar sejauh ini)
+      const calculatedScore = Math.round((correctAnswersCount / questions.length) * 100);
+      liveScoreText.textContent = calculatedScore;
+
+      // Render Pertanyaan
+      questionCategory.textContent = currentQuestion.category;
+      questionText.textContent = currentQuestion.question;
+
+      // Render Opsi Jawaban (Desain Dioptimalkan untuk HP)
+      optionsContainer.innerHTML = '';
+      currentQuestion.options.forEach((option, idx) => {
+        const optionLetter = String.fromCharCode(65 + idx); // A, B, C, D
+        
+        const button = document.createElement('button');
+        // Memberikan touch-feedback aktif yang responsif di HP
+        button.className = "flex items-start text-left w-full p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 hover:border-slate-200 active:scale-[0.98] active:bg-indigo-50/20 transition-all duration-150 outline-none group";
+        button.innerHTML = `
+          <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-white border border-slate-200 font-bold text-slate-500 group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors shrink-0 mr-2.5 text-xs sm:text-sm">${optionLetter}</span>
+          <span class="text-slate-700 font-medium pt-0.5 text-xs sm:text-base leading-relaxed break-words w-full">${option}</span>
+        `;
+        
+        button.addEventListener('click', () => selectOption(idx, button));
+        optionsContainer.appendChild(button);
+      });
+    }
+
+    function selectOption(index, buttonElement) {
+      if (isChecked) return; // Kunci pilihan jika sudah dicek
+
+      selectedOptionIndex = index;
+      userAnswers[currentQuestionIndex] = index;
+      
+      // Reset semua style opsi ke awal
+      Array.from(optionsContainer.children).forEach((btn) => {
+        btn.classList.remove('border-indigo-500', 'bg-indigo-50/50');
+        const badge = btn.querySelector('span');
+        badge.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600');
+        badge.classList.add('bg-white', 'text-slate-500', 'border-slate-200');
+      });
+
+      // Beri style aktif pada opsi terpilih
+      buttonElement.classList.add('border-indigo-500', 'bg-indigo-50/50');
+      const badge = buttonElement.querySelector('span');
+      badge.classList.remove('bg-white', 'text-slate-500', 'border-slate-200');
+      badge.classList.add('bg-indigo-600', 'text-white', 'border-indigo-600');
+
+      btnCheck.disabled = false;
+    }
+
+    function checkAnswer() {
+      if (selectedOptionIndex === null || isChecked) return;
+
+      isChecked = true;
+      btnCheck.classList.add('hidden');
+      btnNext.classList.remove('hidden');
+
+      const currentQuestion = questions[currentQuestionIndex];
+      const isCorrect = (selectedOptionIndex === currentQuestion.correctIndex);
+
+      if (isCorrect) {
+        correctAnswersCount++;
+      }
+
+      // Update Live Score setelah dijawab
+      const calculatedScore = Math.round((correctAnswersCount / questions.length) * 100);
+      liveScoreText.textContent = calculatedScore;
+
+      // Menampilkan visualisasi pada pilihan jawaban (hijau untuk benar, merah jika salah)
+      Array.from(optionsContainer.children).forEach((btn, idx) => {
+        const badge = btn.querySelector('span');
+        if (idx === currentQuestion.correctIndex) {
+          // Jawaban Benar
+          btn.classList.add('border-emerald-500', 'bg-emerald-50/50');
+          badge.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+        } else if (idx === selectedOptionIndex && !isCorrect) {
+          // Jawaban Salah yang dipilih siswa
+          btn.classList.add('border-rose-400', 'bg-rose-50/50');
+          badge.classList.add('bg-rose-500', 'text-white', 'border-rose-500');
+        }
+      });
+
+      // Tampilkan Box Feedback
+      feedbackBox.classList.remove('hidden');
+      if (isCorrect) {
+        feedbackBox.className = "rounded-xl p-4 border border-emerald-200 bg-emerald-50 text-emerald-950 mt-3 transition-all duration-300";
+        feedbackIcon.className = "w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0 bg-emerald-500";
+        feedbackIcon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        `;
+        feedbackTitle.textContent = "Selamat anda benar! 🎉";
+        feedbackDesc.innerHTML = `<strong>Kunci Jawaban:</strong> Opsi ${String.fromCharCode(65 + currentQuestion.correctIndex)} <br><span class="mt-1 block text-xs sm:text-sm">${currentQuestion.explanation}</span>`;
+      } else {
+        feedbackBox.className = "rounded-xl p-4 border border-rose-200 bg-rose-50/70 text-rose-950 mt-3 transition-all duration-300";
+        feedbackIcon.className = "w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0 bg-rose-500";
+        feedbackIcon.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        `;
+        feedbackTitle.textContent = "Anda keliru. 😔";
+        feedbackDesc.innerHTML = `<strong>Kunci Jawaban:</strong> Opsi ${String.fromCharCode(65 + currentQuestion.correctIndex)} (${currentQuestion.options[currentQuestion.correctIndex]})<br><span class="mt-1 block text-xs sm:text-sm"><strong>Penjelasan:</strong> ${currentQuestion.explanation}</span>`;
+      }
+
+      // Otomatis scroll perlahan ke box feedback di ponsel agar terbaca jelas
+      setTimeout(() => {
+        feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+
+    function nextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      quizScreen.classList.add('hidden');
+      resultScreen.classList.remove('hidden');
+
+      const finalScore = Math.round((correctAnswersCount / questions.length) * 100);
+      const wrongCount = questions.length - correctAnswersCount;
+
+      statCorrect.textContent = correctAnswersCount;
+      statWrong.textContent = wrongCount;
+      statScore.textContent = finalScore;
+
+      // Penentuan Kategori Grade & Styling Warna
+      if (finalScore >= 85) {
+        gradeBadge.textContent = "Sangat Memuaskan! 🏆";
+        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm bg-emerald-100 text-emerald-800 border border-emerald-200";
+      } else if (finalScore >= 70) {
+        gradeBadge.textContent = "Bagus Sekali! 👍";
+        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm bg-indigo-100 text-indigo-800 border border-indigo-200";
+      } else if (finalScore >= 50) {
+        gradeBadge.textContent = "Cukup, Ayo Belajar Lagi! 📖";
+        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm bg-amber-100 text-amber-800 border border-amber-200";
+      } else {
+        gradeBadge.textContent = "Butuh Banyak Latihan! 💪";
+        gradeBadge.className = "inline-block px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm bg-rose-100 text-rose-800 border border-rose-200";
+      }
+    }
+
+    function restartQuiz() {
+      startQuiz();
+    }
+
+    function showReview() {
+      resultScreen.classList.add('hidden');
+      reviewScreen.classList.remove('hidden');
+      
+      reviewListContainer.innerHTML = '';
+      questions.forEach((q, idx) => {
+        const uAnsIdx = userAnswers[idx];
+        const isUserCorrect = (uAnsIdx === q.correctIndex);
+        
+        const reviewItem = document.createElement('div');
+        reviewItem.className = `p-4 rounded-xl border ${isUserCorrect ? 'border-emerald-100 bg-emerald-50/20' : 'border-rose-100 bg-rose-50/20'} space-y-2.5`;
+        
+        reviewItem.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded ${isUserCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
+              Soal ${idx + 1} - ${isUserCorrect ? 'Benar' : 'Salah'}
+            </span>
+            <span class="text-[10px] text-slate-400 font-bold">${q.category}</span>
+          </div>
+          <p class="font-bold text-slate-800 text-xs sm:text-sm">${q.question}</p>
+          <div class="text-xs space-y-1 bg-white p-2.5 rounded-lg border border-slate-100">
+            <div class="flex items-start gap-1">
+              <span class="font-bold text-slate-400 shrink-0">Pilihan:</span>
+              <span class="${isUserCorrect ? 'text-emerald-700 font-semibold' : 'text-rose-600 font-semibold'} break-words">
+                ${uAnsIdx !== null ? `${String.fromCharCode(65 + uAnsIdx)}. ${q.options[uAnsIdx]}` : 'Tidak dijawab'}
+              </span>
+            </div>
+            ${!isUserCorrect ? `
+            <div class="flex items-start gap-1">
+              <span class="font-bold text-slate-400 shrink-0">Kunci:</span>
+              <span class="text-emerald-700 font-semibold break-words">${String.fromCharCode(65 + q.correctIndex)}. ${q.options[q.correctIndex]}</span>
+            </div>` : ''}
+          </div>
+          <p class="text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-lg border border-dashed border-slate-200 leading-relaxed">
+            <strong>Penjelasan:</strong> ${q.explanation}
+          </p>
+        `;
+        reviewListContainer.appendChild(reviewItem);
+      });
+    }
+
+    function backToResult() {
+      reviewScreen.classList.add('hidden');
+      resultScreen.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
